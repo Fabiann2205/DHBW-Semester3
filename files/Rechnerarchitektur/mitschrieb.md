@@ -41,4 +41,9 @@ Rechenmaschinen:
     + hoher Platzbedarf
     + teures Bauteil
 - ab 1960: **UNIVAC** Transistor als elektrischer Schaltung (eigentlich ebenfalls ein analoger Verstärker)
+    + **geräuschlos** (Geräuschentwicklung ggf durch andere mechanische Bauteile, z. B. Lüfter, Festplatte, opt.
+      Laufwerk)
+    + **sehr geringer Energieverbrauch**
+    + **geringere Wärmeentwicklung je Bauteil** (Hitze ist auf Vielzahl der Transistoren und hohe Packdichte
+      zurückzuführen)
     + 
