@@ -2,14 +2,14 @@
 
 ## Vorlesung 04.10.2023
 
-### Intro
+### 0.0)  Intro
 
 - Röthig, C560, 07219735883
 - Rechnerarchitektur (Vorlesung) im Modul Technische Informatik 2
 - weitere Vorlesungen: Betriebssysteme, systemnahes Programmieren
 - Pl: Klausur (60min, ohne Hilfsmittel)
 
-### Motivation
+### 0.1) Motivation
 
 Rechner: schneller, fehlerfreier, besseres Speichervermögen
 Rechenmaschinen:
@@ -17,7 +17,7 @@ Rechenmaschinen:
 - Abakus (mechanisch, digital)
 - Rechenschieber (mechanisch, analog)
 
-### Geschichte
+### 0.2) Geschichte
 
 (positive Sachen: fett geschrieben, negative Sachen: nicht fett geschrieben)
 
@@ -46,4 +46,20 @@ Rechenmaschinen:
     + **sehr geringer Energieverbrauch**
     + **geringere Wärmeentwicklung je Bauteil** (Hitze ist auf Vielzahl der Transistoren und hohe Packdichte
       zurückzuführen)
-    + 
+    + **fast kein Verschleiss**
+    + **extrem wenig Platzverbrauch**
+    + **sehr kurze Schaltzeit**
+    + **extrem günstiges Bauteil**
+    + unsere heutigen modernen Rechner arbeiten derzeit nahezu alle digital und elektronisch
+
+### 1.0) von-Neumann Architektur
+
+![von Neumann Architektur Grafik](bilder/vonNeumann.png "Grafik")
+
+- Zentraleinheit (CPU) besteht aus:
+    + Rechenwerk (ALU): Rechnen mit Zahlen und Wahrheitswerten (Logik)
+    + Steuerwerk:
+- Speicherwerk (Hauptspeicher, Primärspeicher):
+- Bus:
+- Eingabewerk:
+- Ausgabewerk:
