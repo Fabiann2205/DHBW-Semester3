@@ -8,7 +8,7 @@ public class Tokenizer {
     public static List<Token> analyze(String input) {
         List<Token> result = new ArrayList<>();
 
-        String[] split = input.split(" ");
+        String[] split = input.split("[\\n\\r\\s]+");
         List<String> splitList = List.of(split);
         boolean isNumber = false;
         for (String a : splitList) {
