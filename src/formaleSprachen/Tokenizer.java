@@ -2,6 +2,7 @@ package formaleSprachen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Tokenizer {
 
@@ -9,8 +10,11 @@ public class Tokenizer {
         List<Token> result = new ArrayList<>();
 
         String[] split = input.split("[\\n\\r\\s]+");
-        List<String> splitList = List.of(split);
+        List<String> splitList = new ArrayList<>(List.of(split));
+        
+
         boolean isNumber = false;
+        String lastWord = null;
         for (String a : splitList) {
             if (isNumber) {
                 result.add(new Token(Token.Type.NUMBER, a));
@@ -18,6 +22,11 @@ public class Tokenizer {
                 continue;
             }
             String aNew = a.toUpperCase();
+            if ((Objects.equals(lastWord, "SELECT") && aNew.equals("SELECT")) || (Objects.equals(lastWord, "FROM") && aNew.equals("FROM")) || (Objects.equals(lastWord, "AS") && aNew.equals("AS")) || (Objects.equals(lastWord, "WHERE") && aNew.equals("WHERE"))) {
+                result.add(new Token(Token.Type.IDENTIFIER, a));
+                continue;
+            }
+            lastWord = aNew;
             switch (aNew) {
                 case "SELECT":
                     result.add(new Token(Token.Type.PROJECTION, a));
