@@ -73,3 +73,7 @@ Rechenmaschinen:
 
 enthält ein zweites Speicherwerk an einem zweiten Bus nur für Programmcode. Im ersten Speicherwerk sind nur Nutzdaten.
 Dadurch erreicht man eine klare, physikalische Trennung von Programmcode und Nutzdaten.
+
+### 1.2) Vergleich von-Neumann und Harvard Architektur
+
+<img src="bilder/vergleichHarvardNeumann.png" alt="Vergleich von-Neumann und Harvard Architektur">
