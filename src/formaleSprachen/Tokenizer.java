@@ -14,6 +14,7 @@ public class Tokenizer {
         for (String a : splitList) {
             if (isNumber) {
                 result.add(new Token(Token.Type.NUMBER, a));
+                isNumber = false;
                 continue;
             }
             String aNew = a.toUpperCase();
