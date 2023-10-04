@@ -54,12 +54,15 @@ Rechenmaschinen:
 
 ### 1.0) von-Neumann Architektur
 
+(FÜR KLAUSUR!)
 ![von Neumann Architektur Grafik](bilder/vonNeumann.png "Grafik")
 
 - Zentraleinheit (CPU) besteht aus:
     + Rechenwerk (ALU): Rechnen mit Zahlen und Wahrheitswerten (Logik)
-    + Steuerwerk:
-- Speicherwerk (Hauptspeicher, Primärspeicher):
-- Bus:
-- Eingabewerk:
-- Ausgabewerk:
+    + Steuerwerk: Ausführung des Programmcodes und Koordination aller anderen Werke
+- Speicherwerk (Hauptspeicher, Primärspeicher, Arbeitsspeicher): Verarbeitung von Informationen/Nutzdaten und
+  Programmcode gleichermaßen, keine konventionelle oder gar HW-technische Trennung
+- Bus: verbindet alle Komponenten und ermöglicht den Informationsaustausch/Datenfluss zwischen diesen
+- Eingabewerk: "logische Schnittstelle" für Peripheriegeräte (z. B. USB-Controller/SATA-Controller), es ist nicht direkt
+  das Eingabegerät gemeint
+- Ausgabewerk: "Schnittstelle für Ausgabegeräte" (z. B. Grafikkarte, aber nicht der Monitor)
