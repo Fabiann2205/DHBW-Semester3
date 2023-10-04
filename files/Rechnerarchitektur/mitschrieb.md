@@ -55,7 +55,7 @@ Rechenmaschinen:
 ### 1.0) von-Neumann Architektur
 
 (FÜR KLAUSUR!)
-![von Neumann Architektur Grafik](bilder/vonNeumann.png "Grafik")
+<img alt="von Neumann Architektur Grafik" src="bilder/vonNeumann.png" title="Grafik"/>
 
 - Zentraleinheit (CPU) besteht aus:
     + Rechenwerk (ALU): Rechnen mit Zahlen und Wahrheitswerten (Logik)
@@ -66,3 +66,10 @@ Rechenmaschinen:
 - Eingabewerk: "logische Schnittstelle" für Peripheriegeräte (z. B. USB-Controller/SATA-Controller), es ist nicht direkt
   das Eingabegerät gemeint
 - Ausgabewerk: "Schnittstelle für Ausgabegeräte" (z. B. Grafikkarte, aber nicht der Monitor)
+
+### 1.1) Harvard Architektur
+
+<img alt="Harvard Architektur im Vergleich zu von-Neumann Grafik" src="bilder/harvardVsNeumann.png" title="Grafik"/>
+
+enthält ein zweites Speicherwerk an einem zweiten Bus nur für Programmcode. Im ersten Speicherwerk sind nur Nutzdaten.
+Dadurch erreicht man eine klare, physikalische Trennung von Programmcode und Nutzdaten.
