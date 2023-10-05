@@ -27,3 +27,7 @@ Richard Lutz (KIT) (richard.lutz@kit.edu)
 - Shell
 - C
 - Rust
+
+### DATA DICTIONARY Definition (WICHTIG!)
+
+![Data Dictionary Definition](bilder/dataDictionaryDefinition.png)
