@@ -1,6 +1,6 @@
 # Software Engineering
 
-Richard Lutz (KIT)
+Richard Lutz (KIT) (richard.lutz@kit.edu)
 
 ## Vorlesung 05.10.2023
 
@@ -20,3 +20,10 @@ Richard Lutz (KIT)
 - Kompatibilität
 - Skalierbarkeit
 - Portabilität
+
+### Programm Möglichkeiten
+
+- Java
+- Shell
+- C
+- Rust
