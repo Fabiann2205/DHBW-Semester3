@@ -24,4 +24,6 @@
       ist bc auch ein atom, weil es so definiert wurde (manchmal sind space und comma im alphabet, manchmal werden diese
       aber auch als meta symbole verwendet)
     - formal language: eine Sprache L im Alphabet Sigma ist ein Satz an Strings in Sigma.
-    - 
+        - aufbau: oft werden Sonderzeichen anstelle von z. B. greater than verwendet (>).
+        - <img src="bilder/formaleGrammatikDef.png" alt="Formale Grammatik Definition">
+        - <img src="bilder/deterministicFiniteAcceptorDef.png" alt="Deterministischer Finiter Akzeptor Definition">
