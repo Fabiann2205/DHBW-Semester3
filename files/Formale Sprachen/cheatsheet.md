@@ -19,7 +19,9 @@
       aufgeteilt und diese ganzen Symbole wieder als String gespeichert
     - substring: Ein String, der aus einem Teil der Symbole eines anderen Strings besteht, ist ein Substring
         - atom = symbol: Ist der kleinste Substring einer Menge von Substrings von einem String, der nicht mehr in
-          Substrings aufgeteilt werden kann
+          Substrings aufgeteilt werden kann → genauer definiert in alphabet
     - alphabet: bezeichnet man als Sigma, besteht aus allen atom's. BSP: B=[0,1] oder C=[a,b,c] oder D=[bc,a,f] → hier
-      ist bc auch ein atom, weil es so definiert wurde
+      ist bc auch ein atom, weil es so definiert wurde (manchmal sind space und comma im alphabet, manchmal werden diese
+      aber auch als meta symbole verwendet)
+    - formal language: eine Sprache L im Alphabet Sigma ist ein Satz an Strings in Sigma.
     - 
