@@ -48,4 +48,17 @@
 - Konzeptionelles Modell: Kapitel 2
 - logisches Datenbankschema: Kapitel 3
 
+BSP:
 
+| Matrikelnummer | Vorname | Nachname  | PLZ   | Ort | Straße | Fach | Semester |
+|----------------|---------|-----------|-------|-----|--------|------|----------|
+| 100001         | Anton   | Müller    | 67256 | r   | 4      | INF  | 1        |
+| 100002         | Jochen  | Schweizer | 49854 | t   | 5      | WI   | 3        |
+| 999999         | Detlef  | k         | 34434 | t   | t      | INF2 | 6        |
+
+Tabelle
+
+- einwertig: jedes entity hat genau einen Wert aus einem Wertebereich (in einem Attribut/Spalte gibt es alle Werte nur
+  einmal)
+
+Aufgabe: 
