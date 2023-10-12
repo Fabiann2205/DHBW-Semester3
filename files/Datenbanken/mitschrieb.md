@@ -61,4 +61,6 @@ Tabelle
 - einwertig: jedes entity hat genau einen Wert aus einem Wertebereich (in einem Attribut/Spalte gibt es alle Werte nur
   einmal)
 
-Aufgabe: 
+Einfaches ER-Modell bauen → Ziel einwertige Attribute, heißt ein Attribut kann nicht mehrere Werte haben
+
+Aufgabe: Übungsblatt 2 Aufgabe 2.1
