@@ -74,7 +74,11 @@ Es gibt auch "weak" entity's, das heißt diese existieren nur dann, wenn eine an
 existiert. Auch kann es zwischen zwei Entitätentypen mehrere Verbindungen geben.
 
 Schlüssel von Beziehungen (Rauten): hat als Attribute Primärschlüssel von den beiden verbundenen Entitäten und andere
-Attribute, sowie einen weiteren eigenen Primärschlüssel.
+Attribute, sowie einen eigenen Primärschlüssel (Kombination aus beiden Primärschlüsseln der angeschlossenen Entitäten).
+
+<img src="bilder/SchlüsselVonBeziehungstypen.png" alt="Primärschlüssel von Beziehungstypen">
+
+<img src="bilder/SchlüsselVonBeziehungstypen2.png" alt="Primärschlüssel von Beziehungstypen 2">
 
 ### Komplexität von binären Beziehungen
 
@@ -88,10 +92,13 @@ Attribute, sowie einen weiteren eigenen Primärschlüssel.
 
 #### Min-Max Notation:
 
-0 ≤ a ≤ b ≤ *
-Schreibe auf: auf beiden Seiten der Entitätsverbindung je eine Min, Max Notation:
-(0,1) → mindestens 0 maximal 1 Beziehung
-(0,4) → mindestens 0 maximal 4 Beziehungen
-(0,*) → mindestens 0 maximal beliebig viele Beziehungen
-(1,*) → mindestens 1 maximal beliebig viele Beziehungen
+- 0 ≤ a ≤ b ≤ *
+- Schreibe auf: auf beiden Seiten der Entitätsverbindung je eine Min, Max Notation:
+    - (0,1) → mindestens 0 maximal 1 Beziehung
+    - (0,4) → mindestens 0 maximal 4 Beziehungen
+    - (0,*) → mindestens 0 maximal beliebig viele Beziehungen
+    - (1,*) → mindestens 1 maximal beliebig viele Beziehungen
 
+### Beziehung Grad 3
+
+<img src="bilder/Grad3Beziehung.png" alt="Beziehung dritten Grades">
