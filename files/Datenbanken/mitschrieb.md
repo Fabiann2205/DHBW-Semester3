@@ -62,5 +62,3 @@ Tabelle
   einmal)
 
 Einfaches ER-Modell bauen → Ziel einwertige Attribute, heißt ein Attribut kann nicht mehrere Werte haben
-
-Aufgabe: Übungsblatt 2 Aufgabe 2.1
