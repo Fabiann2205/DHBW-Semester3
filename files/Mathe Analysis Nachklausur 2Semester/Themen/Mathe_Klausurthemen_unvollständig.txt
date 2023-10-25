@@ -1,0 +1,30 @@
+Kommt NICHT dran (nur in der letzten Kreuz&Quer-Aufgabe):
+
+Folgen
+Reihen (AU�ER Potenzreihen!!!)
+Stetigkeit/Differenzierbarkeit
+Least-Square
+Furie
+Matrix/Vektor/Richtungs Ableitung
+cauchyscher konvergenzsatz 
+einschr�nkungskrit(Konvergenz)
+L'Hopital
+Integrale (aber ziemlich sicher in letzter (AWESOME!))
+
+
+Kommt dran:
+
+Potenzreihen
+Fehlerrechnung
+La Grange
+Interpolation 
+Taylor
+Partialbruchzerlegung
+Differentialgleichung
+	-bestimmen Sie den Ansatz
+	-Ansatz gegeben, bestimmen Sie Koeffizienten
+Integrale teilweise in der letzten Aufgabe
+keine einzelne Quotienten/Wurzelkriterium Aufgabe, aber garantiert in letzter Aufgabe/in Kombination mit etwas anderem
+
+
+ACHTUNG: Unvollst�ndig, bitte erg�nzen!
