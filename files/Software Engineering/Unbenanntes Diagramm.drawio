@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-02T10:06:27.276Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="5iqqn-HysZu-qDnRyBaE" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-02T10:11:46.230Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="goL5LCJuIWbw2k2GnWsk" version="22.0.8" type="github">
   <diagram name="Seite-1" id="AFe3_xiZWw6bGmPmBy-W">
     <mxGraphModel dx="938" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -479,6 +479,13 @@
         </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-102" value="Kartendaten" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="440" y="90" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-103" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.041;entryY=0.33;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="UjHKhjJmp_GbaxRpM0CP-8" target="UjHKhjJmp_GbaxRpM0CP-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="260" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
