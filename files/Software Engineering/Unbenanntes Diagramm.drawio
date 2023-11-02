@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-02T08:14:32.302Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="fmneZCA7K2Ll0n4Ue53w" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-02T08:15:56.269Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="j6KRMo9wWB7GHG0j4wgo" version="22.0.8" type="github">
   <diagram name="Seite-1" id="AFe3_xiZWw6bGmPmBy-W">
-    <mxGraphModel dx="817" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1151" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -243,6 +243,11 @@
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-29" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-7" target="Fa3aqSn8HLSYC_7PjLff-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-40" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="1120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-7" value="Tierspeicher" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="480" y="940" width="120" height="60" as="geometry" />
         </mxCell>
@@ -273,6 +278,11 @@
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-22" value="Auftragsspeicher" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="270" y="600" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-35" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="1150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-25" value="Kartenerstellung" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="334" y="1000" width="120" height="120" as="geometry" />
         </mxCell>
@@ -290,6 +300,12 @@
         </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-34" value="Krankmeldungen, Stechzeiten, usw" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;rotation=-25;" vertex="1" parent="1">
           <mxGeometry x="560" y="640" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-36" value="Karte des Zoos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="454" y="1090" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-39" value="Infos zu den Tieren" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1018" width="160" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
