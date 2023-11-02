@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-02T08:16:20.251Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="QtCM7cKeSBYe7HTrzW6-" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-02T08:19:43.990Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="GVj4sfkk1nzuiCy2vf3S" version="22.0.8" type="github">
   <diagram name="Seite-1" id="AFe3_xiZWw6bGmPmBy-W">
     <mxGraphModel dx="1151" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -248,6 +248,13 @@
             <mxPoint x="710" y="1120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-42" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-7" target="Fa3aqSn8HLSYC_7PjLff-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-7" value="Tierspeicher" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="480" y="940" width="120" height="60" as="geometry" />
         </mxCell>
@@ -265,6 +272,13 @@
         </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-17" value="Kartendaten" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="200" y="125" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-43" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-19" target="Fa3aqSn8HLSYC_7PjLff-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="780" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="Fa3aqSn8HLSYC_7PjLff-19" value="Mitarbeiterspeicher" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="630" y="810" width="120" height="60" as="geometry" />
@@ -311,6 +325,13 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint y="560" as="sourcePoint" />
             <mxPoint x="820" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fa3aqSn8HLSYC_7PjLff-44" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.393;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Fa3aqSn8HLSYC_7PjLff-3" target="Fa3aqSn8HLSYC_7PjLff-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="830" />
+            </Array>
           </mxGeometry>
         </mxCell>
       </root>
