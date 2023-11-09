@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-09T09:50:44.677Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="yYiMcX7O7GBcjdFxRfxS" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-09T10:00:43.668Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="3cJnReFwMKtPwNonuHpf" version="22.1.0" type="github">
   <diagram name="Seite-1" id="N6Jan-Rdk0IKHwFH1EoH">
     <mxGraphModel dx="1026" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -206,7 +206,7 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-45" value="Tiere verwalten" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-43">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-45" value="Mitarbeiter verwalten" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-43">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -219,7 +219,7 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-48" value="Ein Mitarbeiter/Tierarzt ändert die Daten eines Tieres (oder legt an)" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-46">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-48" value="Das Anlegen oder Löschen eines Mitarbeiter im System" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;fontStyle=0" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-46">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -232,7 +232,7 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-51" value="Tierarzt, Mitarbeiter" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-49">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-51" value="Verwaltung" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-49">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -245,7 +245,7 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-54" value="Bedarf einer Änderung eines Tieres" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-52">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-54" value="Anstellung / Kündigung von Mitarbeiter" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-52">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -258,7 +258,7 @@
             <mxRectangle width="153" height="110" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-57" value="1. Der Akteur öffnet das Programm.&lt;br&gt;2. Akteur klickt auf Tier verwalten.&lt;br&gt;3. Dateneingabe.&lt;br&gt;4. Speichern.&lt;br&gt;5. Programm schließen." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-55">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-57" value="1. Die Verwaltung legt einen neuen Mitarbeiter an, oder bearbeitet/löscht diesen" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-55">
           <mxGeometry x="153" width="537" height="110" as="geometry">
             <mxRectangle width="537" height="110" as="alternateBounds" />
           </mxGeometry>
@@ -271,7 +271,7 @@
             <mxRectangle width="153" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-60" value="1. Wenn der Nutzer noch nicht registriert ist, muss der Mitarbeiter verwaltet werden." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-58">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-60" value="-" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-58">
           <mxGeometry x="153" width="537" height="50" as="geometry">
             <mxRectangle width="537" height="50" as="alternateBounds" />
           </mxGeometry>
@@ -284,7 +284,7 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-63" value="Um einen Eintrag eines Tieres zu ändern, muss der Nutzer registriert sein." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-61">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-63" value="-" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-61">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -297,12 +297,12 @@
             <mxRectangle width="153" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-66" value="Bei einem Tier hat sich etwas geändert." style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-64">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-66" value="-" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-64">
           <mxGeometry x="153" width="537" height="30" as="geometry">
             <mxRectangle width="537" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VWa2UIGW0JFw9dLLVXkl-67" value="Tiere verwalten" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" vertex="1" parent="1">
+        <mxCell id="VWa2UIGW0JFw9dLLVXkl-67" value="Au verwalten" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="90" y="1420" width="690" height="370" as="geometry" />
         </mxCell>
         <mxCell id="VWa2UIGW0JFw9dLLVXkl-68" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1" parent="VWa2UIGW0JFw9dLLVXkl-67">
