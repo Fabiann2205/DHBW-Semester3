@@ -1,0 +1,11 @@
+--
+-- falls Tabellen mit gleichem Namen schon existieren, diese Tabellen löschen
+--
+drop table Assistenten;
+drop table hoeren;
+drop table voraussetzen;
+drop table pruefen;
+drop table Studenten;
+drop table Vorlesungen;
+drop table Professoren;
+drop table Telefone;

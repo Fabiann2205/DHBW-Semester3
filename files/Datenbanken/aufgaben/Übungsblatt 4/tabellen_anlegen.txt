@@ -1,0 +1,64 @@
+--
+-- Tabellen anlegen
+--
+create table Studenten
+    (MatrNr      integer primary key,
+     Name        varchar (20) not null,
+     Vorname     varchar (15),
+     Strasse     varchar (30),
+     PLZ         integer,
+     Ort         varchar (20),
+     SVNR	     varchar (15),
+     Semester    integer check (Semester between 1 and 7));
+
+create table Professoren
+    (PersNr      integer primary key,
+     Name        varchar (12) not null,
+     Vorname     varchar (12),
+     Strasse     varchar (30),
+     PLZ         integer,
+     Ort         varchar (20),
+     Rang        char (2) check (Rang in ('C2', 'C3', 'C4')),
+     Fachgebiet  varchar (20),
+     Gehalt      integer,
+     Raum        integer unique);
+
+create table Assistenten
+    (PersNr      integer primary key,
+     Name        varchar (12) not null,
+     Vorname     varchar (12),
+     Strasse     varchar (30),
+     PLZ         integer,
+     Ort         varchar (20),
+     Fachgebiet  varchar (20),
+     Boss        integer,
+     Gehalt      integer,
+     foreign key (Boss) references Professoren on delete set null);
+
+create table Vorlesungen
+    (VorlNr      integer primary key,
+     Titel       varchar (30) not null,
+     SWS         integer check (SWS between 1 and 7),
+     gelesenVon  integer references Professoren on delete set null);
+
+create table hoeren
+    (MatrNr      integer references Studenten on delete cascade,
+     VorlNr      integer references Vorlesungen on delete cascade,
+     primary key (MatrNr, VorlNr));
+
+
+create table voraussetzen
+    (Vorgänger   integer references Vorlesungen on delete cascade,
+     Nachfolger  integer references Vorlesungen on delete cascade,
+     primary key (Vorgänger, Nachfolger));
+
+create table pruefen
+    (MatrNr      integer references Studenten on delete cascade,
+     VorlNr      integer references Vorlesungen,
+     PersNr      integer references Professoren on delete set null,
+     Note	     numeric (2,1) check (Note between 0.7 and 4.0),
+     primary key (Matrnr, VorlNr));
+
+create table Telefone
+  (TelefonNr varchar (12) not null,
+   Raum integer);
