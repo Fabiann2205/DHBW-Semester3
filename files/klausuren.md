@@ -13,6 +13,7 @@
 ## Was wurde bisher gemacht?
 
 - Mathe:
+    - Zusammenfassung (Kapitel 1 (ohne Matrizen))
 - Web Engineering 2:
 - Komm & Netztechnik:
 - Rechnerarchitektur:
@@ -22,8 +23,7 @@
 ## Was muss gemacht werden?
 
 - Mathe:
-    - Zusammenfassung
-    - Zettel mit allen "möglichen Klausurfragen" aus Vorlesungen
+    - Zusammenfassung (auch alle möglichen Klausurfragen)
     - Zettel mit allen Formeln zum Merken
     - Altklausuren
 - Web Engineering 2:
