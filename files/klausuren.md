@@ -13,7 +13,7 @@
 ## Was wurde bisher gemacht?
 
 - Mathe:
-    - Zusammenfassung (Kapitel 1 (ohne Matrizen))
+    - Zusammenfassung (Kapitel 1 (ohne Matrizen), 2)
 - Web Engineering 2:
 - Komm & Netztechnik:
 - Rechnerarchitektur:
