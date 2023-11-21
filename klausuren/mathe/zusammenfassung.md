@@ -58,6 +58,44 @@
 
 ## Grundarithmetik
 
+#### Zusammenfassung
+
+- Rechenarten wie +, -, *, /, x^y, exp, log, sin, cos, arctan, √
+- Darstellbarer Bereich von [-x max, -x min] U [x min, x max] U [0]
+- Darstellbarer Bereich kann durch die oben gegebenen Rechenarten verlassen werden (z. B. mit x*y → Overflow; auch
+  Umwandlung von kartesischen in Polarkoordination → Underflow)
+- Underflow oder Overflow oft durch Ändern der Reihenfolge der Berechnungen vermeidbar
+- relative Maschinengenauigkeit: T = 0,5*b^(1-l) (l = Anzahl der Stellen der Gleitkommaarithmetik) → selbst wenn es
+  Rundungen usw gibt, ist der Fehler immer kleiner als T
+- Klammern setzen kann auch die Berechnung eines Algorithmus beschleunigen
+- Empfindlichkeitsdilemma: Die Wurzeln von Polynomen können sehr empfindlich bezüglich der Polynomkoeffizienten sein:
+    - a(z) = 1,3459*z^4 - 4,8839*z^3 + 6,6388*z^2 - 4,0063*z + 0,90556
+    - alle Wurzeln (also z1 bis z4) sind stabil, also im Einheitskreis (von 0 bis 1)
+    - verändert man bei 6,6388 die vierte Stelle auf 7, also 6,6387 → z1 liegt bei über 1, hat also den Einheitskreis
+      verlassen und ist somit instabil und falsch
+    - keine E/A Differenzialgleichungen für Differenzialgleichungssimulationen verwenden!
+
+#### Mögliche Aufgaben
+
+- Wie viele Flops braucht man, um die Gleichung zu lösen? (x^2+3)/(x^2+4) ANTWORT: 4 Stück, da x^2 doppel vorkommt
+    - andere Gleichung: sin^2(x) + cos^2(x) = 1 ANTWORT: 0 Stück, da die Lösung festgelegt ist und somit keine Rechnung
+      benötigt wird
+    - und karierte Seite nach Seite 10 im Skript
+- Schreibe einen Runtime Test, also wie lang ein Programm zur Ausführung benötigt. Was muss beachtet werden?
+    - ANTWORT: Einfach einen Timer laufen lassen. Zum Beachten: man muss den Timer mehrfach laufen lassen, um
+      Testungenauigkeiten zu verkleinern (zum Beispiel durch Hintergrundprozesse); auch sollte das Programm nicht zu
+      groß gemacht werden, um Verfälschungen durch Festplattenladezeiten zu vermeiden.
+- Warum sind in MatLab Schleifen aufwendig?
+    - ANTWORT: Weil es eine Interpreter Sprache ist. Das bedeutet, dass die Schleife in jeden Durchlauf neu ausgewertet
+      werden muss.
+- Programmiere das Horner-Schema! ANSCHAUEN!!!
+- Warum sollten die Eigenwerte einer Matrix nicht über die charakteristische Gleichung berechnet werden?
+    - ANTWORT: führt auf Polynome, Nullstellensuche ist kompliziert. Stattdessen Q/Z Zerlegung nutzen
+- Was ist der Zusammenhang zwischen Wurzeln und Eigenwerten?
+    - ANTWORT: Begleitmatrizen aufstellen und Eigenwerte dieser berechnen → QZ-Zerlegung → Wurzeln
+- Kontrollfragen aus Skript (auf Seite 12)
+    - siehe Lösungen und Notizen auf Seiten 44-48 des Skriptes
+
 ## Komplexität von Algorithmen
 
 ## Numerisches Differenzieren
