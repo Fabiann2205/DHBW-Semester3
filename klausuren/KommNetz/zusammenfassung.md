@@ -11,8 +11,8 @@
 | Transportschicht       | ✓    | -                      |
 | Applikationsschicht    | ✓    | SMTP nicht laut Dozent |
 
-1
-2
+1 DONE → Einleitung
+2 DONE → Bitübertragungsschicht
 3 DONE → Sicherungsschicht
 4 DONE → Sicherungsschicht
 5 DONE → Vermittlungsschicht
@@ -20,7 +20,11 @@
 7 DONE → Transportschicht
 8 DONE → OSI und Applikationsschicht
 9 DONE → Vermittlungsschicht
-10
+10 Beschreiben Sie was auf Netzwerkebene alles geschehen muss, damit eine Webseite (z.B. dhbw-
+karlsruhe.de) in einem Browser eines Netzwerkgerätes angezeigt werden kann. Das Netzwerkgerät
+befindet sich hinter einem NAT Gateway. Das Gateway und das Netzwerkgerät sind frisch initalisiert,
+DNS und ARP Cache sind leer! In der Beschreibung sollen folgende Themen behandelt werden:
+Adressierung Ethernet und IP, ARP, NAT und DNS? (10 Punkte)
 
 ## OSI-Schichtenmodell
 
@@ -34,7 +38,38 @@
 
 ## Einleitung
 
-- d
+- hierarchische vs verteilte Netzwerke
+- <img src="bilder/netzaufbau.png" alt="Netzaufbau"/>
+- AUFGABEN:
+    - Was wird innerhalb der heutigen Internet Architektur mit den Internetknoten (Peering at IXPs) erreicht?
+        - Austausch zwischen den Netzen der ISPs (Netzbetreibern) und dem Tier 1 ISP Backbone Netz (Netz mit dem alle
+          anderen Netze verbunden sind)
+        - Gebühren werden von anderen Anbietern verlangt für die Netznutzung
+    - Was macht die IETF und welche Dokumente werden von der IETF veröffentlicht?
+        - Internet Engineering Task Force: technische Weiterentwicklung des Internets, durch Erstellung und
+          Verabschiedung von Internetprotokollstandards, Beschreibungen momentan bekannter Verfahren sowie verschiedener
+          Dokumente mit eher informativem Charakter. Diese Dokumente werden in Form von RFCs erstellt und umfassen unter
+          anderem: IP, UDP, TCP, SCTP, HTTP
+    - Wie unterscheidet sich die Paketvermittlung von der Leitungsvermittlung?
+        - Leitungsvermittlung: konstanter Datenfluss über eine Leitung, Leitung ist während Übertragung blockiert
+        - Paketvermittlung: Datenfluss aufgeteilt in Pakete, nicht immer alles blockiert, multiplexen, wie aktuell im
+          Internet
+    - Ist der Unterschied zwischen einer physikalischen Topologie und einer logischen Topologie (Overlay Netzwerk)?
+        - physikalisch: Verkehrswege über Verkabelung, wirklicher Aufbau
+        - logisch: Datenfluss zwischen den Endgeräten (Datenübertragung weiß nichts von physikalischem Netzwerk)
+    - Wodurch unterscheiden sich Client-Server und das Peer-to-Peer Modell?
+        - Client-Server: Verkehr läuft immer über einen Server, jeder Computer kann ein Server oder Client sein
+          (Problem: zentralisiert)
+        - Peer-to-Peer: Verkehr läuft direkt von Gerät zu Gerät, alle gleichberechtigt, jedes Gerät kann alles anbieten
+          oder beanspruchen
+    - Was ist ein Protokoll:
+        - Ein Protokoll hält oder legt fest, zu welchem Zeitpunkt oder in welcher Reihenfolge welcher Vorgang durch wen
+          oder durch was veranlasst wird.
+        - Ein Kommunikationsprotokoll eine Vereinbarung, nach der die Datenübertragung zwischen zwei oder mehreren
+          Parteien abläuft. In seiner einfachsten Form kann ein Protokoll definiert werden als die Regeln, die Syntax,
+          Semantik und Synchronisation der Kommunikation bestimmen.
+        - Protokolle können durch Hardware, Software oder eine Kombination von beiden implementiert werden. Auf der
+          untersten Ebene definiert ein Protokoll das Verhalten der Verbindungs-Hardware.
 
 ## Bitübertragungsschicht
 
