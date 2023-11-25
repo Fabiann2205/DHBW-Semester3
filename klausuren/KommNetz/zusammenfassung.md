@@ -34,11 +34,59 @@
 
 ## Einleitung
 
+- d
+
 ## Bitübertragungsschicht
+
+- Übertragungsmedien:
+    - Leitergebunden:
+        - Magnetisch
+        - Lichtwellenleiter
+        - Twisted Pair am Meisten verwendet, auch Koaxialkabel
+    - Leiterungebunden (Drahtlos)
+        - Elektromagnetisch
+        - Infrarot
+        - Lichtübertragung (Laser)
+- Bandbreite: Kenngröße, die die Breite des Intervalls in einem Frequenzspektrum festlegt, in dem ein Signal ohne
+  nennenswerte Verfremdung übertragen werden kann (in Hz gemessen/oder Bit/s)
+- Shannon-Hartley-Gesetz: Cn = 2 * B (Cn = maximale Datenübertragungsrate, B = Bandbreite) (störungsfreier Kanal)
+- SNR (Signal-Rausch-Verhältnis): Cs = B * ld(1+S/N) (S = Signalleistung, N = Rauschleistung, S/N = SNR)
+- Multiplextechnik: mehrere Nutzsignale parallel und idealerweise ihne gegenseitig Beeinflussung auf einem gemeinsamen
+  Kanal übertragen → CDMA (AUFGABE)
+- AUFGABEN: <img src="bilder/cdma.png"/>
+- Digitale Modulation: Aufgaben Moodle
 
 ## Sicherungsschicht
 
-- Aufgaben
+- Aufgaben:
+    - Bereitstellen einer definierten Schnittstelle zur Vermittlungsschicht
+    - Behandlung von Übertragungsfehlern
+    - Regulierung des Datenflusses
+- Grundlegende Dienste:
+    - Unbestätigter verbindungsloser Dienst:
+        - kein logischer Verbindungsaufbau
+        - keine Bestätigung von Frames, Verlust möglich
+    - Bestätigter verbindungsloser Dienst:
+        - kein logishcer Verbindungsaufbau
+        - Bestätigung jedes einzelnen Frames (in höheren Schichten ineffizient, zu viele Frames müssen neu verschickt
+          werden)
+    - Bestätigter Verbinsungaorientierter Dienst:
+        - Verbindungsaufbau vor Übertragung
+        - ebenfalls Bestätigung jedes einzelnen Frames
+- Umsetzung von Frames: Erkennen, wo aufhören und enden, Bitstrom aus Bitübertragunsschicht, Versenden dieser
+    - Byte Count Methode: aufschreiben, wie lang einzelne Frames sind, Bits werden abgezählt im Bitstrom
+    - Flag Byte Methode: Start und Ende eines Frames mit Flag Byte markiert in Bitstrom
+    - Byte Stuffing Methode: vor Flag Byte ein Escape Byte setzen → dadruch werden falsche Flag Bytes erkannt (z. B. in
+      Daten); auch bei Bit Stuffing möglich (Bit Muster statt Escape Byte)
+    - Framing durch Codierung: Start und Ende wird durch spezielles Codewort markiert, was in Daten nie vorkommen kann
+- Fehlererkennung/Fehlerkorrektur:
+    - Hamming-Code: Parity Bits an Zweierpotenzstellen (1,2,4,8,16,...)
+      <img src="bilder/hamming_code.png"/>
+    - auch CRC Erkennung möglich
+- Zugriff auf MAC-Adresse: mehrere Rechner teilen sich ein physikalisches Übertragungsmedium, vermeiden von
+  Datenkollisionen und Datenverlust
+    - Kontrollierter Zugriff: Zugriff auf Medium geregelt, dass keine Kollisionen auftreten können → Token-Ring
+    - Konkurrierender Zugriff: jeder greift darauf zu, gibt Regeln, um Kollisionen behandeln zu können → ALOHA, CSMA ...
 
 - Ethernet Frame Aufbau: <img src="bilder/ethernet_frame_aufbau.png"/>
 - AUFGABEN:
@@ -48,12 +96,12 @@
       die Mindestlänge eines Ethernet-Frames ist, um Kollisionen zu vermeiden (Fehlererkennung)
     - Wie groß ist der Ethernet-Rahmen insgesamt und wie groß ist der Payload? mindestens 64 Bytes, in Bsp vl nur 60
       Byte, da in Wireshark Praemble, SDF und Checksum ausgeblendet sind
-    - Welche Vorteile ergebn sich beim Einsatz von Switches/Bridges? Stern Topologie wird gebildet (auf der
+    - Welche Vorteile ergeben sich beim Einsatz von Switches/Bridges? Stern Topologie wird gebildet (auf der
       Sicherungsschicht); Pakete werden nur an richtigen Port gesendet (VLans) und nicht an alle, Aufteilung eines LANs
       in unterschiedliche Kollisionsdomänen
-
-- Hamming-Code: Parity Bits an Zweierpotenzstellen (1,2,4,8,16,...)
-  <img src="bilder/hamming_code.png"/>
+- Data Link Layer Switching:
+  <img src="bilder/data_link_layer_switching.png"/>
+    - können auch VLANs erzeugen <img src="bilder/vlans.png"/>
 
 ## Vermittlungsschicht
 
