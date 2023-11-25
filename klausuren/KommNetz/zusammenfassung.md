@@ -4,10 +4,10 @@
 
 | Thema                  | Done | Informationen          |
 |------------------------|------|------------------------|
-| Einleitung             | x    | x                      |
-| Bitübertragungsschicht | x    | x                      |
-| Sicherungsschicht      | x    | x                      |
-| Vermittlungsschicht    | x    | x                      |
+| Einleitung             | ✓    | -                      |
+| Bitübertragungsschicht | ✓    | -                      |
+| Sicherungsschicht      | ✓    | -                      |
+| Vermittlungsschicht    | ✓    | -                      |
 | Transportschicht       | ✓    | -                      |
 | Applikationsschicht    | ✓    | SMTP nicht laut Dozent |
 
