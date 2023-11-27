@@ -117,11 +117,85 @@
     - Speichern von State (mit useState()) (Speichern/Ändern von Daten in einer React Funktion)
     - Lifecycle: useEffect() (Seiteneffekte für React Funktionen; Callback, welcher zu bestimmten Zeitpunkten aufgerufen
       wird)
-    -
+- Component Architecture
+    - Teilen der Webseite in einzelne Komponenten → Verteilung und Strukturierung der Komplexität
+    - Komponenten enthalten zusammengehörige Funktionalität, haben feste Schnittstellen (modular einsetzbar, Parameter
+      rein und raus) und abstrahieren Struktur und Styling (Bsp für Komponenten: Button, Google Anzeige für Shops)
+      → React Funktionen sind Komponenten (kann Parameter entgegennehmen und über Callback einen Wert zurückgeben)
+    - Vorteile:
+        - Konsistenz im Styling
+        - Wiederverwendbarkeit
+        - Schnellere Entwicklung
+        - Einfacherer Instandhaltung
+    - Nachteile:
+        - Tiefe Verschachtelungen möglich
+- Atomic Design
+    - Strukturierung und Kategorisierung von Komponenten
+    - ordnet Komponenten nach Atomen (Buttons, Text, usw), Molekülen (Suchleiste, Form Gruppen), Organismen (Header,
+      Footer, Overlays), Templates (Schablonen), Pages (konkrete Seiten)
+    - Storybook Funktion in React lässt Komponenten in verschiedensten Ausprägungen ansehen
+- Micro Frontends
+    - bringt Ordnung und Struktur
+    - Aufteilen des Frontends in mehrere Frontends, die einfach zusammengesteckt werden können
 
 ## 5 Rich Client React Testing
 
+- Test Pyramide:
+    - manuelle/automatisierte End to End Tests
+        - manuelle oder automatisierte Tests
+        - Testen über das richtige UI
+        - Testen der gesamten Software
+        - Styling erfordert manuelle Tests
+        - Lange Laufzeit (besonders manuelle Tests mit Menschen)
+    - Integration Tests
+        - automatisierte Tests
+        - Testen zusammenhängender Teile der Anwendung (ein einzelner Backendservice etc.)
+        - weniger Detailtiefe, Fokus liegt auf wichtigen Szenarien, interessanten Edge Cases oder Fehlern, die
+          aufgetreten sind
+        - etwas längere Laufzeit
+    - Unit Tests
+        - automatisierte Tests
+        - Testen der kleinsten Einheiten auf sehr detaillierter Ebene mit einer kurzen Laufzeit
+- Wieso Unit-Tests? übersichtlich, test driven development, Komponenten vielseitig einsetzbar, lebende Dokumentation
+- Wie schreiben wir Unit-Tests? Isolation Komponente (z. B. Dependency Injection), Schnittstellen und Childkomponenten
+  werden gemockt
+- Wie schreibe ich gute Unit-Tests?
+    - Logik testen
+    - dynamisches Rendering
+    - weitere JS Logik
+- Wie sollten wir eine Komponente testen? Nutzer interagieren mit Buttons und Textfeldern, nicht mit JS Funktionen, am
+  besten End to End
+- Sauberer Aufbau:
+    - Schema folgen
+    - Sätze bilden
+    - Testbeschreibung als lebende Doku
+    - wenig Duplikate
+    - jeder Test eine Sache testen → im Fehlerfall schnell erkannt
+    - Code Duplikate in Tests vermeiden mit beforeEach Funktionen
+    - Tests müssen reproduzierbar sein (nicht aktuelles Datum verwenden)
+- Unit-Tests in React
+    - React Testing Library
+    - Funktionen: Render, screen, fireevent, jest.fn (mocken), jest.mock (Imports mocken), waitfor (async Code)
+    - Routing muss im Test vorhanden sein (Navigate mocken)
+    - Assertions in waitfor möglich, Aufrufe verifizierbar
+
 ## 6 Rich Client React Redux
+
+- Was ist State Management? State Management bezieht sich auf die Verwaltung des Zustands (State) einer Anwendung
+  während ihrer Lebensdauer. Der Zustand umfasst alle Daten, die den aktuellen Zustand der Benutzeroberfläche, die Daten
+  der Anwendung und andere relevante Informationen beschreiben. In Webanwendungen wird der Zustand oft durch Variablen
+  oder Objekte repräsentiert und kann sich während der Benutzerinteraktion oder aufgrund von Datenänderungen ändern.
+- Was ist Redux? Redux ist eine JavaScript-Bibliothek für das State Management in Webanwendungen, insbesondere in
+  React-Anwendungen. Redux implementiert das Konzept des unidirektionalen Datenflusses und speichert den Zustand der
+  Anwendung in einem einzigen Store. Die Änderungen am Zustand werden durch sogenannte "Actions" ausgelöst, die von "
+  Reducers" verarbeitet werden. Redux erleichtert die Verwaltung des Zustands in großen Anwendungen und fördert einen
+  klaren und vorhersehbaren Datenfluss.
+- Wozu braucht man State Management? State Management ist wichtig, um den Zustand einer Anwendung effizient zu
+  verwalten. In komplexen Anwendungen kann der Zustand viele verschiedene Teile der Benutzeroberfläche und der Daten
+  umfassen. Ein gutes State Management sorgt dafür, dass Daten konsistent und zuverlässig aktualisiert werden, reduziert
+  unerwartete Seiteneffekte und erleichtert die Wartung der Anwendung.
+- Wie baue ich Redux in mein React-Frontend ein? Redux-Store erstellen, Reducer Funktionen erstellen, Provider verwenden
+  um Redux-Store in React-Anwendung zu integrieren, Komponenten mit Redux verbinden
 
 ## 7 Jakarta Server Faces
 
