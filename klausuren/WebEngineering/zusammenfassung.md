@@ -95,11 +95,35 @@
 
 ## 4 Rich Client React
 
-## 5
+- SPA in Plain JS:
+    - exzessives Einsetzen von Ajax
+    - Nachteile: sehr aufwendig, viel Boilerplate Code (immer wieder dasselbe)
+- React:
+    - unterstützt bei DOM Manipulation und Routing
+    - Change Detection
+- Funktionen in React:
+    - enthalten Information und Logik zum Rendern des UI
+    - Mischung aus JS und HTML
+    - BSP:
+      export default functiob ReactFunction() {
+      const name = 'World';
+      return <div>Hello {name}!</div>
+      }
+- React Routing:
+    - einfache Navigation
+    - automatische Anpassung der URL
+- Laden dynamischer Daten mit der Library Axios (axios.get(...))
+- React Hooks (reagiert auf alle Parameter im Array, nicht nur state Änderungen):
+    - Speichern von State (mit useState()) (Speichern/Ändern von Daten in einer React Funktion)
+    - Lifecycle: useEffect() (Seiteneffekte für React Funktionen; Callback, welcher zu bestimmten Zeitpunkten aufgerufen
+      wird)
+    -
 
-## 6
+## 5 Rich Client React Testing
 
-## 7
+## 6 Rich Client React Redux
+
+## 7 Jakarta Server Faces
 
 ## 8 Authentifizierung
 
