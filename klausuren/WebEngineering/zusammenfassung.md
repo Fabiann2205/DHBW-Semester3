@@ -199,6 +199,48 @@
 
 ## 7 Jakarta Server Faces
 
+Jakarta Server Faces (JSF) ist ein Java-Web-Framework, das die Entwicklung von Benutzeroberflächen für
+Java-Webanwendungen erleichtert. JSF gehört zu den Java Enterprise Edition (Java EE) Technologien und wird jetzt unter
+dem Dach der Eclipse Foundation als Jakarta EE weiterentwickelt.
+Hier sind einige wichtige Merkmale von Jakarta Server Faces:
+
+- Komponentenbasiertes Framework: JSF ist ein komponentenbasiertes Framework, was bedeutet, dass es die
+  Benutzeroberfläche in wiederverwendbare Komponenten aufteilt. Entwickler können benutzerdefinierte Komponenten
+  erstellen und wiederverwenden, um die Anwendung zu strukturieren. Es gibt z. B. Definitionen für Navigation,
+  Listeners, Beans etc
+- Managed Beans: JSF verwendet sogenannte "Managed Beans", um die Logik und den Zustand der Anwendung zu verwalten.
+  Diese Beans können Informationen zwischen den Ansichten (Views) und dem Backend speichern.
+  Definierbar über Annotationen oder die faces-config.xml; es gibt verschiedene Scopes, in denen das Bean gilt
+- Event-Driven Programming: JSF setzt auf ereignisgesteuerte Programmierung. Aktionen wie Benutzerinteraktionen führen
+  zu Ereignissen, die vom Framework behandelt werden können. Zum Beispiel kann ein Button-Klick ein Ereignis auslösen,
+  das eine Methode in einem Managed Bean aufruft. (Application oder System Events)
+- Fester Lebenszyklus (Lifecycle): JSF hat einen festen Lebenszyklus für die Verarbeitung von Anfragen und die
+  Aktualisierung der Benutzeroberfläche. Dieser Lebenszyklus ermöglicht es dem Framework, die Anfrage des Benutzers zu
+  verstehen und die Benutzeroberfläche entsprechend zu aktualisieren.
+  <img src="bilder/jsf_lifecycle.png"/>
+- Templating: JSF unterstützt die Verwendung von Templates, was die Möglichkeit bietet, das Layout und das Design der
+  Anwendung zu standardisieren. Templates können verwendet werden, um gemeinsame Strukturen auf verschiedenen Seiten zu
+  definieren.
+- Integration mit anderen Technologien: JSF kann gut mit anderen Java-EE-Technologien integriert werden, wie z.B.
+  Enterprise JavaBeans (EJB), Java Persistence API (JPA) und anderen.
+- Navigation enteder explizit oder implizit
+    - wenn in faces-config.xml definiert, dann explizit, wie es dort definiert wurde
+    - wenn nicht, dann implizit, es wird immer an die Adresse geroutet, die im Return der Funktion steht
+- Zusätzliche Interfaces:
+    - Converters
+        - Konverter für gängige Datentypen und Einheiten
+    - Events and Listeners
+    - Validators
+        - Standard-Validator für gängige Datentypen
+- JSF-Tags:
+    - wie HTML-Tags, bloß eigene in JSf, z. B. \<h:form>
+
+Die Entwicklung von Jakarta Server Faces wurde unter dem Namen JavaServer Faces (JSF) bei der Java Community Process (
+JCP) gestartet. Nach dem Übergang von Oracle zu Eclipse wurde es als Jakarta Server Faces Teil des
+Jakarta-EE-Projekts. Es ist wichtig zu beachten, dass Jakarta EE den Platz von Java EE eingenommen hat, nachdem Oracle
+die Rechte an den Java-Trademarks an die Eclipse Foundation übergeben hat. Daher wird Jakarta Server Faces als Teil
+des Jakarta-EE-Ökosystems weiterentwickelt.
+
 ## 8 Authentifizierung
 
 - Zugriffstypen:
