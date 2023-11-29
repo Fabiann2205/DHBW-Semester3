@@ -1,0 +1,62 @@
+
+
+N -> PQ
+N -> t
+
+S -> eps
+
+
+G in Chomsky Normalform
+w in G
+|w| = n
+n > 0
+
+n - 1 Produktionsschritte um n Nonterminals zu erzeugen
+n Produktinsschritte um n Nonterminals in n Terminals umzuwandeln
+
+
+
+X -> eps
+
+M -> AXB
+
+
+Startsymbol nicht auf der rechten Seite auftaucht (neues Startsymbol S')
+Alle Terminals werden durch N -> t Regeln erzeugt (spezielles Nonterminal für jedes Terminal eingeführt und alle vorkommen ersetzt)
+Alle Regeln der Form N -> eps ersetzt (indem ich das eps an die Verwendungsstelle von N hochgezogen habe)
+Alle Regeln der Form N -> M ersetzt (indem ich alle Regeln von M auch für N anbiete)
+Alle Regeln der Form N -> mehr als zwei Non-Terminals ersetzt (durch Einführen von Hilfssymbolen)
+
+N -> irgendwas  (Länge 0 geht nicht, 1 Non Terminal geht nicht , 3+ Non Terminal geht nicht
+irgendwas kann nur noch 2 Non-Terminals oder 1 Terminal sein
+
+
+R -> r
+X -> x
+X -> r
+
+L -> l
+L -> x
+L -> r
+
+M -> m
+M -> l
+M -> x
+M -> r
+
+T -> t
+T -> m
+T -> l
+T -> x
+T -> r
+
+S -> t
+S -> m
+S -> l
+S -> x
+S -> r
+
+
+
+
+

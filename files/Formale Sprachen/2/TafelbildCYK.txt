@@ -1,0 +1,66 @@
+𝑃={S→𝐴𝐵|𝐵𝐶, 𝐴→𝐵𝐴|𝑎, 𝐵→𝐶𝐶|𝑏, 𝐶→𝐴𝐵|𝑎 } Startsymbol S
+𝑤=𝑏𝑎
+
+
+Wortlänge 2     A,S
+Wortlänge 1   B		A,C
+Terminals     b		a
+
+S -> BC -> bC -> ba
+A -> BA -> bA -> ba
+
+
+w = abba
+
+w[0,2) = ab
+w[1,4) = bba
+
+
+ba
+
+Wortlänge 2          w[0,2)
+Wortlänge 1   w[0,1)		w[1,2)
+Terminals     w[0,1)		w[1,2)
+
+
+w = w[0,n) wobei n = |w|
+
+w[x,y)
+
+{B} ist die Menge aller Nonterminalsymbole aus denen das Teilwort w[0,1) erzeugt werden kann
+{A,C} ist die Menge aller Nonterminalsymbole aus denen das Teilwort w[1,2) erzeugt werden kann
+
+{B} X {A,C} = {BA, BC} => ermittle NonTerminalSymbole auf deren rechter Seite BA oder BC steht
+
+D[x,y) ist die Menger aller Nonterminalsymbole aus denen das Teilwort w[x,y) erzeugt werden kann
+
+Wortlänge 4                         D[0,4)
+Wortlänge 3                 D[0,3)        D[1,4)
+Wortlänge 2          D[0,2)         D[1,3)     D[2,4)
+Wortlänge 1   D[0,1)		D[1,2)      D[2,3)      D[3,4)
+Terminals     w[0,1)		w[1,2)		w[2,3)		w[3,4)
+
+D[i,i+1) Produktionsregeln auf deren rechter Seite w[i,i+1) steht
+D[i,i+2) Produktionsregeln auf deren rechter Seite ein Element aus D[i,i+1) X D[i+1,i+2) steht
+D[i,i+3) Produktionsregeln auf deren rechter Seite ein Element aus D[i,i+1) X D[i+1,i+3) U D[i,i+2) X D[i+2,i+3)
+D[i,i+4) Produktionsregeln auf deren rechter Seite ein Element aus D[i,i+1) X D[i+1,i+4) U D[i,i+2) X D[i+2,i+4) U D(i,i+3) X D[i+3,i+4)
+D[i,i+n) Produktionsregeln auf deren rechter Seite ein Element aus D[i,i+1) X D[i+1,i+n) U D[i,i+2] X D[i+2,i+n) ... bis 
+D[i,i+n) Produktionsregeln auf deren rechter Seite ein Element aus U für alle k 1 bis n-1 D[i,i+k) X D[i+k,i+n)
+
+D[0,3) i=0
+abb
+
+w[0,2) = ab
+w[1,3) = bb
+
+w[0,3)
+w[0,1)w[1,3)
+w[0,2)w[2,3)
+
+abbb
+
+w[0,4)
+w[0,1)w[1,4)
+w[0,2)w[2,4)
+w[0,3)w[3,4)
+
