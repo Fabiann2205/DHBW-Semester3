@@ -28,6 +28,8 @@
 
 ## 2 Single Page Application (SPA)
 
+→ dazu auch die Sequenzdiagramme aus den Slides können
+
 - Eine JavaScript-Web-Applikation, die exakt eine Seite laden muss, um komplett zu funktionieren
 - Webseite wird komplett geladen beim ersten Aufruf, dann in der Runtime Daten vom Server abgerufen, welche dann durch
   JS gerendert werden
@@ -72,6 +74,8 @@
     - Abgrenzung einzelner Komponenten
     - Interaktion zwischen Komponenten
 
+→ keine detaillierten Erklärungen, nur wissen, dass es da verschiedene Formen gibt
+
 | Monolith                                    | Modulith                                                                              | Services                                 | Microservice                                                            |
 |---------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------|-------------------------------------------------------------------------|
 | Alle Aspekte der Anwendung in einem Projekt | Unterteilung der ANwendung in Fachlichkeiten (Auslagerung in Modulen/Package/Projekt) | Modulith als Kern                        | Auslagerung jedes Moduls in Services                                    |
@@ -90,7 +94,7 @@
 - Spring-Boot:
     - Application Framework, Dependency-Injection-Container
     - Schichten: Frontend (Nutzeroberfläche), Middleware (implementiert Businesslogik), Backend (Persistente Ebene,
-      andere Services)
+      andere Services) → das ist wichtig (egal welche Architektur, es gibt immer diese 3 Punkte)
     - Informationen zum Programmieren in Folien
 
 ## 4 Rich Client React
@@ -129,7 +133,7 @@
         - Einfacherer Instandhaltung
     - Nachteile:
         - Tiefe Verschachtelungen möglich
-- Atomic Design
+- Atomic Design → viele kleine Bausteine bauen großes ganzes zusammen (Webseite)
     - Strukturierung und Kategorisierung von Komponenten
     - ordnet Komponenten nach Atomen (Buttons, Text, usw), Molekülen (Suchleiste, Form Gruppen), Organismen (Header,
       Footer, Overlays), Templates (Schablonen), Pages (konkrete Seiten)
@@ -181,6 +185,10 @@
 
 ## 6 Rich Client React Redux
 
+KOMMT NICHT DRAN, DA WIR ES NICHT GEMACHT HABEN!!!
+
+→ was sind states, warum müssen wir die managen?
+
 - Was ist State Management? State Management bezieht sich auf die Verwaltung des Zustands (State) einer Anwendung
   während ihrer Lebensdauer. Der Zustand umfasst alle Daten, die den aktuellen Zustand der Benutzeroberfläche, die Daten
   der Anwendung und andere relevante Informationen beschreiben. In Webanwendungen wird der Zustand oft durch Variablen
@@ -198,6 +206,8 @@
   um Redux-Store in React-Anwendung zu integrieren, Komponenten mit Redux verbinden
 
 ## 7 Jakarta Server Faces
+
+→ Sessionscopes, Abgrenzung JSF zu JSP wichtig, wo ist da SpringBoot
 
 Jakarta Server Faces (JSF) ist ein Java-Web-Framework, das die Entwicklung von Benutzeroberflächen für
 Java-Webanwendungen erleichtert. JSF gehört zu den Java Enterprise Edition (Java EE) Technologien und wird jetzt unter
@@ -217,16 +227,16 @@ Hier sind einige wichtige Merkmale von Jakarta Server Faces:
 - Fester Lebenszyklus (Lifecycle): JSF hat einen festen Lebenszyklus für die Verarbeitung von Anfragen und die
   Aktualisierung der Benutzeroberfläche. Dieser Lebenszyklus ermöglicht es dem Framework, die Anfrage des Benutzers zu
   verstehen und die Benutzeroberfläche entsprechend zu aktualisieren.
-  <img src="bilder/jsf_lifecycle.png"/>
+  <img src="bilder/jsf_lifecycle.png"/> → wichtig
 - Templating: JSF unterstützt die Verwendung von Templates, was die Möglichkeit bietet, das Layout und das Design der
   Anwendung zu standardisieren. Templates können verwendet werden, um gemeinsame Strukturen auf verschiedenen Seiten zu
   definieren.
 - Integration mit anderen Technologien: JSF kann gut mit anderen Java-EE-Technologien integriert werden, wie z.B.
   Enterprise JavaBeans (EJB), Java Persistence API (JPA) und anderen.
-- Navigation enteder explizit oder implizit
+- Navigation enteder explizit oder implizit → Unterschied erklären, wie die je funktionieren
     - wenn in faces-config.xml definiert, dann explizit, wie es dort definiert wurde
     - wenn nicht, dann implizit, es wird immer an die Adresse geroutet, die im Return der Funktion steht
-- Zusätzliche Interfaces:
+- Zusätzliche Interfaces: → Unterschied Validator und Converter erklären können
     - Converters
         - Konverter für gängige Datentypen und Einheiten
     - Events and Listeners
@@ -243,12 +253,14 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
 
 ## 8 Authentifizierung
 
-- Zugriffstypen:
+→ Also bei allen Punkten hier immer die Unterschiede kennen und vl Beispiele und wie das je funktioniert
+
+- Zugriffstypen: → Unterschiede kennen
     - Discretionary Access Control (DAC):
         - jeder Nutzer kann Rechte für ein Objekt einzeln einstellen
     - Mandatory Access Control (MAC):
         - System gibt Rechte vor, anpassbar, aber System hat mehr Rechte
-- Access Control Typen:
+- Access Control Typen: (Unterschiede wissen)
     - Identitätsbasiert
     - Rollenbasiert
     - Attributbasiert
@@ -277,11 +289,12 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
     - HTTP Basic Authentication:
         - Browser stellt Formular bereit, Server authentifiziert (username:password), Form nicht editierbar
     - Form based Authentication:
-        - Form von Anwendung
+        - Formular von Anwendung
         - Anwendung entscheidet über Zugang
         - bessere Fehlerbehandlung
-    - Protokolle: SAML, OAuth2 (bei beiden ein Identity Provider, automatischer Login ohne Passwort, SSO Zugriff auf
-      Ressourcen, OAuth2 gibt Access und Refreshtokens)
+    - Protokolle: SAML (hat ebenfalls einen Identity Provider, wo die Session gespeichert wird), OAuth2 (bei beiden ein
+      Identity Provider, automatischer Login ohne Passwort, SSO Zugriff auf Ressourcen, OAuth2 gibt Access und
+      Refreshtokens)
 - Authorisation: Zugriff auf Ressourcen
 - Authentication: stellt sicher, dass der Nutzer auch wirklich der ist für den er sich ausgibt
 - Verschlüsselung: Public (Verschlüsseln) und Private (Entschlüsseln) Key
