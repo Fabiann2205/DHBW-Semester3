@@ -295,9 +295,11 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
     - Protokolle: SAML (hat ebenfalls einen Identity Provider, wo die Session gespeichert wird), OAuth2 (bei beiden ein
       Identity Provider, automatischer Login ohne Passwort, SSO Zugriff auf Ressourcen, OAuth2 gibt Access und
       Refreshtokens)
+    - SessionStorage nicht nutzen, da von jedem Fenster darauf zugegriffen werden kann (unsicher) → lieber in Cookies
 - Authorisation: Zugriff auf Ressourcen
 - Authentication: stellt sicher, dass der Nutzer auch wirklich der ist für den er sich ausgibt
-- Verschlüsselung: Public (Verschlüsseln) und Private (Entschlüsseln) Key
+- Verschlüsselung: Public (Verschlüsseln) und Private (Entschlüsseln) Key (erklären können, dass es 2 Schlüssel gibt,
+  Unterschied Verschlüsselung und Signaturverfahren)
 - Signaturverfahren: Prüft ob Nachricht verändert wurde; Verschlüsselungsverfahren: verhindert Zugriff auf
   Nachrichteninhalt (RSA)
 - JSON Web Token:
@@ -316,7 +318,7 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
     - komplexere Architektur
     - höherer Ressourcenverbrauch
 - Security ist Qualitätsanforderung, je nachdem, wie sicher und wertvoll eigene Daten sind
-- viele Arten der Angriffe (genaue Definition auf Folien)
+- viele Arten der Angriffe (genaue Definition auf Folien) => Definition lernen und je die Abwehrmaßnahme
     - Request Manipulation
     - Directory Traversal
     - SQL-Injection
@@ -326,6 +328,7 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
     - Man-in-the-Browser/-Middle
     - Phising
     - Denial-of-Service (DDoS)
+      <img src="bilder/image.png"/>
 - Abwehrmaßnahmen:
     - Serverseitige Daten verschlüsseln, validieren und nicht interpretieren
     - HTTPS
