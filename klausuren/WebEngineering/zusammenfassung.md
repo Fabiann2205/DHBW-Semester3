@@ -1,12 +1,14 @@
 # Web Engineering 2
 
-## JS Themen:
-
+### KA: Codebeispiele verstehen können, aber nicht schreiben
+```
+JS Themen:
 - Callbacks
 - XML HTTP Request
 - Promises
 - Async/Await
 - Spring
+```
 
 ## 1 Ajax in Plain JavaScript (asynchrones JS und XML)
 
@@ -27,8 +29,8 @@
 - Async/Await mit Promises: Async markiert asynchronen Code, mit Await warten wir auf das Ergebnis des Async Codes
 
 ## 2 Single Page Application (SPA)
-
-→ dazu auch die Sequenzdiagramme aus den Slides können
+ 
+### KA: dazu auch die Sequenzdiagramme aus den Slides können
 
 - Eine JavaScript-Web-Applikation, die exakt eine Seite laden muss, um komplett zu funktionieren
 - Webseite wird komplett geladen beim ersten Aufruf, dann in der Runtime Daten vom Server abgerufen, welche dann durch
@@ -144,22 +146,23 @@
 
 ## 5 Rich Client React Testing
 
-- Test Pyramide:
+- Test Pyramide:  
+    ``` 
     - manuelle/automatisierte End to End Tests
-        - manuelle oder automatisierte Tests
-        - Testen über das richtige UI
-        - Testen der gesamten Software
-        - Styling erfordert manuelle Tests
-        - Lange Laufzeit (besonders manuelle Tests mit Menschen)
+          - manuelle oder automatisierte Tests
+          - Testen über das richtige UI
+          - Testen der gesamten Software
+          - Styling erfordert manuelle Tests
+          - Lange Laufzeit (besonders manuelle Tests mit Menschen)
     - Integration Tests
-        - automatisierte Tests
-        - Testen zusammenhängender Teile der Anwendung (ein einzelner Backendservice etc.)
-        - weniger Detailtiefe, Fokus liegt auf wichtigen Szenarien, interessanten Edge Cases oder Fehlern, die
-          aufgetreten sind
-        - etwas längere Laufzeit
+          - automatisierte Tests
+          - Testen zusammenhängender Teile der Anwendung (ein einzelner Backendservice etc.)
+          - weniger Detailtiefe, Fokus liegt auf wichtigen Szenarien, interessanten Edge Cases oder Fehlern, die
+            aufgetreten sind
+          - etwas längere Laufzeit
     - Unit Tests
-        - automatisierte Tests
-        - Testen der kleinsten Einheiten auf sehr detaillierter Ebene mit einer kurzen Laufzeit
+          - automatisierte Tests
+          - Testen der kleinsten Einheiten auf sehr detaillierter Ebene mit einer kurzen Laufzeit ```
 - Wieso Unit-Tests? übersichtlich, test driven development, Komponenten vielseitig einsetzbar, lebende Dokumentation
 - Wie schreiben wir Unit-Tests? Isolation Komponente (z. B. Dependency Injection), Schnittstellen und Childkomponenten
   werden gemockt
@@ -185,7 +188,7 @@
 
 ## 7 Jakarta Server Faces
 
-→ Sessionscopes, Abgrenzung JSF zu JSP wichtig, wo ist da SpringBoot
+### KA: Sessionscopes, Abgrenzung JSF zu JSP wichtig, wo ist da SpringBoot
 
 Jakarta Server Faces (JSF) ist ein Java-Web-Framework, das die Entwicklung von Benutzeroberflächen für
 Java-Webanwendungen erleichtert. JSF gehört zu den Java Enterprise Edition (Java EE) Technologien und wird jetzt unter
@@ -257,7 +260,7 @@ des Jakarta-EE-Ökosystems weiterentwickelt.
 
 ## 8 Authentifizierung
 
-→ Also bei allen Punkten hier immer die Unterschiede kennen und vl Beispiele und wie das je funktioniert
+### KA: Also bei allen Punkten hier immer die Unterschiede kennen und vl Beispiele und wie das je funktioniert
 
 - Zugriffstypen: → Unterschiede kennen
     - Discretionary Access Control (DAC):
