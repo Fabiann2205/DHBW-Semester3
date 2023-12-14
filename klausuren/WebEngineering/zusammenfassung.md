@@ -228,6 +228,32 @@ Hier sind einige wichtige Merkmale von Jakarta Server Faces:
   Aktualisierung der Benutzeroberfläche. Dieser Lebenszyklus ermöglicht es dem Framework, die Anfrage des Benutzers zu
   verstehen und die Benutzeroberfläche entsprechend zu aktualisieren.
   <img src="bilder/jsf_lifecycle.png"/> → wichtig
+- Schritte:
+    - **Restore View (Wiederherstellung der Ansicht):**
+      In dieser Phase wird die JSF-Ansicht wiederhergestellt, das bedeutet, der Zustand der Benutzeroberfläche wird
+      wiederhergestellt. Dabei wird überprüft, ob es sich um eine neue Anfrage handelt oder ob es sich um eine teilweise
+      Anforderung handelt.
+    - **Apply Request Values (Anwenden der Anforderungswerte):**
+      In dieser Phase werden die vom Benutzer eingegebenen Werte aus dem Request-Objekt auf die entsprechenden
+      Komponenten der Benutzeroberfläche angewendet.
+    - **Process Validations (Validierungsprozess):**
+      Hier werden die Werte der Benutzeroberfläche validiert. Das beinhaltet die Überprüfung von Benutzereingaben auf
+      Gültigkeit, wie z.B. Überprüfung von Datumsformaten oder numerischen Werten.
+    - **Update Model Values (Aktualisierung der Modellwerte):**
+      Nach der Validierung werden die Werte in das zugrunde liegende Datenmodell aktualisiert. Wenn die Validierung
+      erfolgreich ist, werden die Werte auf die zugehörigen Backing-Beans oder andere Datenmodelle übertragen.
+    - **Invoke Application (Anwendungsaufruf):**
+      In dieser Phase werden die Methoden aufgerufen, die mit den Aktionen auf der Benutzeroberfläche verknüpft sind.
+      Zum Beispiel werden hier die Methoden aufgerufen, die in der Backing-Bean definiert sind und die mit Schaltflächen
+      oder Links verknüpft sind.
+    - **Render Response (Antwort rendern):**
+      Schließlich wird in dieser Phase die Antwortseite für den Benutzer generiert und gerendert. Der Zustand der
+      Benutzeroberfläche wird wieder in die Ausgabe-HTML-Seite geschrieben, und diese wird dem Benutzer zurückgesendet.
+
+Es ist wichtig zu beachten, dass diese Phasen im JSF-Lebenszyklus nicht immer linear durchlaufen werden. Je nach Aktion
+des Benutzers oder Ereignissen in der Anwendung kann der Lebenszyklus unterschiedlich sein. Auch können bestimmte Phasen
+übersprungen oder mehrmals durchlaufen werden, abhängig von den Anforderungen der Anwendung.
+
 - Templating: JSF unterstützt die Verwendung von Templates, was die Möglichkeit bietet, das Layout und das Design der
   Anwendung zu standardisieren. Templates können verwendet werden, um gemeinsame Strukturen auf verschiedenen Seiten zu
   definieren.
