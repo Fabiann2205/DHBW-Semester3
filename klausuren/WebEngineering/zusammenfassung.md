@@ -183,28 +183,6 @@
     - Routing muss im Test vorhanden sein (Navigate mocken)
     - Assertions in waitfor möglich, Aufrufe verifizierbar
 
-## 6 Rich Client React Redux
-
-KOMMT NICHT DRAN, DA WIR ES NICHT GEMACHT HABEN!!!
-
-→ was sind states, warum müssen wir die managen?
-
-- Was ist State Management? State Management bezieht sich auf die Verwaltung des Zustands (State) einer Anwendung
-  während ihrer Lebensdauer. Der Zustand umfasst alle Daten, die den aktuellen Zustand der Benutzeroberfläche, die Daten
-  der Anwendung und andere relevante Informationen beschreiben. In Webanwendungen wird der Zustand oft durch Variablen
-  oder Objekte repräsentiert und kann sich während der Benutzerinteraktion oder aufgrund von Datenänderungen ändern.
-- Was ist Redux? Redux ist eine JavaScript-Bibliothek für das State Management in Webanwendungen, insbesondere in
-  React-Anwendungen. Redux implementiert das Konzept des unidirektionalen Datenflusses und speichert den Zustand der
-  Anwendung in einem einzigen Store. Die Änderungen am Zustand werden durch sogenannte "Actions" ausgelöst, die von "
-  Reducers" verarbeitet werden. Redux erleichtert die Verwaltung des Zustands in großen Anwendungen und fördert einen
-  klaren und vorhersehbaren Datenfluss.
-- Wozu braucht man State Management? State Management ist wichtig, um den Zustand einer Anwendung effizient zu
-  verwalten. In komplexen Anwendungen kann der Zustand viele verschiedene Teile der Benutzeroberfläche und der Daten
-  umfassen. Ein gutes State Management sorgt dafür, dass Daten konsistent und zuverlässig aktualisiert werden, reduziert
-  unerwartete Seiteneffekte und erleichtert die Wartung der Anwendung.
-- Wie baue ich Redux in mein React-Frontend ein? Redux-Store erstellen, Reducer Funktionen erstellen, Provider verwenden
-  um Redux-Store in React-Anwendung zu integrieren, Komponenten mit Redux verbinden
-
 ## 7 Jakarta Server Faces
 
 → Sessionscopes, Abgrenzung JSF zu JSP wichtig, wo ist da SpringBoot
