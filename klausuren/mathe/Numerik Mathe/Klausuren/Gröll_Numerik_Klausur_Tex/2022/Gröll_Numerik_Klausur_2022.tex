@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usetikzlibrary{arrows,automata,positioning}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{caption}
+\captionsetup[table]{name=Tabelle}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=35mm,
+ bottom=25mm,
+ right=25mm
+}
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\padTable}[1]{$\quad$ #1 $\quad$}
+\newcommand{\ankerAuf}{⊣} % nur mit XeLaTeX, da Unicode!
+\newcommand{\ankerZu}{⊢}
+\pagestyle{fancy}
+%\DeclareUnicodeCharacter{}{\ankerZu}
+\fancyhf{}
+\rhead{Klausur WiSe 2022}
+\lhead{Mathematik \rom{3} $-$ Numerik}
+\cfoot{Seite \thepage}
+\lfoot{}
+
+
+\usepackage{xcolor}
+\usepackage{environ}
+\usepackage[most]{tcolorbox}
+\tcbset{on line,
+        boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white,colback=lightgray,
+        highlight math style={enhanced}
+        }
+\newcommand{\kommentarMacro}[1]{\textcolor{lightgray}{(\texttt{#1})}}
+\newcommand{\solutionMacro}[1]{\,\\\texttt{#1}\,\\}
+\NewEnviron{solution}{\textcolor{blue}{\solutionMacro{\BODY}}}
+
+\renewcommand{\footrulewidth}{1pt}
+\title{Mathematik \rom{3} \\ Numerik \\ Lutz Gröll $-$ Klausur WiSe 2022}
+\author{TINF21B1 \\ Lutz Gröll, Connaisseur der imaginären Schwarzwälder Kirschtorte}
+
+\newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}
+	\large
+	\vspace*{7cm}
+	Maximale Punktzahl: 69 Punkte\\
+	\vspace*{1cm}
+	Bearbeitungszeit: 90 Minuten\\
+	\vspace*{1cm}
+	Hilfsmittel: Taschenrechner + Formelblatt (für LA und Analysis, siehe Ordner)\\
+	\vspace*{1cm}
+	Datum: 06.12.2022\\
+	\vspace*{1cm}
+	\small \LaTeX-Dokument sowie teilweise Lösungen von 2021 übernommen \\Format der folgenden Seiten ist dem der Klausur sehr ähnlich.\\
+\end{center}
+\pagebreak
+
+
+
+\section*{Aufgabe 1:}
+\begin{enumerate}
+	\item Notieren Sie die wichtigsten Schritte für das Erstellen eines numerischen Programms.
+
+	      \vspace{9cm}
+
+	\item Notieren Sie ein zweidimensionales Nullstellenproblem mit exakt 4 Lösungen (Formel und Skizze) \kommentarMacro{kein Originaltext}
+
+	      \vspace{4cm}
+
+	\item Nennen Sie ein ill-posed Problem für eine eindimensionale numerische Integration. \kommentarMacro{kein Originaltext}
+
+\end{enumerate}
+\pagebreak
+
+\newcommand{\spaltensummennorm}[1]{||#1||_{1}}
+\newcommand{\zeilensummennorm}[1]{||#1||_{\infty}}
+\newcommand{\realVector}[2]{#1\in \mathbb{R}^{#2}}
+\newcommand{\realMatrix}[3]{#1\in \mathbb{R}^{#2\times #3}}
+\newcommand{\indentTab}{\hphantom{~~~~}}
+
+\section*{Aufgabe 2:}
+\begin{enumerate}
+	\item Geben Sie eine $2\times2$ Matrix an, welche verschiedene Konditionszahlen in der Spaltensummennorm und in der Zeilensummennorm hat. \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.25cm}
+
+	\item Formulieren Sie die Berechnung von $x = B^{-1}Cd$ in eine numerisch effiziente Form um.
+
+	      \vspace{1.25cm}
+
+	\item Zeigen Sie an einem Beispiel, dass die Addition numerisch nicht assoziativ ist.
+
+	      \vspace{1.25cm}
+
+	\item Was verstehen Sie unter Overfitting? \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.25cm}
+
+	\item Was ist Spaltenskalierung? (Formel und Zweck/Anwendung) \\ \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.25cm}
+
+	\item Sie haben ein schlecht konditioniertes Ausgleichsproblem aus dem ein Signal entstehen soll. Sie wollen dabei die 2. Ableitung bestrafen. Notieren Sie die Least-Square Formel, sowie die Matrix zur Bestrafung der 2. Ableitung. \\ \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.25cm}
+
+	\item Warum kann es beim Lösen der Differentialgleichung $\dot{x_1} = x_2 - k \sqrt{x_1}$ mit \mbox{$x\geq 0$} sinnvoll sein, eine Modifikation des Vektorfelds vorzunehmen? Welche Lösung schlagen Sie vor?
+
+	      \vspace{1.25cm}
+
+	\item Wodurch sind Testmatrizen für numerische Leistungstests gekennzeichnet?
+
+\end{enumerate}
+\pagebreak
+
+\section*{Aufgabe 3:}
+\begin{enumerate}
+	\item Nennen Sie eine praktische Anwendung, für die eine Interpolation nach Lagrange in Frage kommt.
+
+	      \vspace{1.5cm}
+
+	\item Notieren Sie für $y = \frac{ax + b}{x^2 + cx + d}$ einen linearen LS-Ansatz.
+
+	      \vspace{1.5cm}
+
+	\item Wie viele Stützwerte benötigen Sie mindestens, um die Parameter aus Teilaufgabe 2 eindeutig bestimmen zu können?
+
+	      \vspace{1.5cm}
+
+	\item In welchem Konflikt stehen Ingenieure, die online eine Ableitung berechnen müssen?
+
+	      \vspace{1.5cm}
+
+	\item Was halten Sie von $f_k'' = -\frac{1}{12}f_{k-3}+ \frac{1}{3}f_{k-2} + \frac{1}{2}f_{k-1} - \frac{5}{3}f_k + f_{k+1}$?
+
+	      \vspace{1.5cm}
+
+	\item Erstellen Sie für die Formel $x^3\left(x-1\right)=1$ zwei verschiedene Fixpunktiterationen. \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.5cm}
+
+
+	\item Warum werden Eigenwerte von Matrizen numerisch nicht wie in der Algebra üblich über die charakteristische Gleichug bestimmt? Was macht man stattdessen?
+
+	      \vspace{1.5cm}
+
+	\item Skizzieren Sie eine instabile Fixpunktiteration graphisch.
+
+\end{enumerate}
+\pagebreak
+
+\section*{Aufgabe 4:}
+\begin{enumerate}
+	\item Gegeben seien $\realMatrix{A}{30}{5}, \realMatrix{B}{5}{100}, \realVector{C}{100}$. Berechnen Sie die Flops für $A(BC)$.
+
+	      \vspace{1.25cm}
+
+	\item Sie benutzen einen Microcontroller, der nur die 4 Grundrechenarten beherrscht. Damit müssen Sie öfters Polynome der Form $y=a_3x^3+a_2x^2+a_1x+a_0$ berechnen. Wie viele Flops werden bei einer einfachen Berechnung benötigt? Wie viele hingegen, wenn das Horner-Schema zur Berechnung verwendet wird? \\ \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.5cm}
+
+	\item Welche Vorraussetzung muss für eine Parallelisierung eines Programms vorliegen? Nennen Sie ein Beispiel, wo Prallelisierung auf 8 Rechnerkernen leicht anwendbar ist und viel bringt.
+
+	      \vspace{1.5cm}
+
+	\item Schreiben Sie in Pseudocode einen Test, um numerische Bugs bei der Auswertung von $tan\,x$ zu verhindern.
+
+	      \vspace{1.5cm}
+
+	\item Verbessert Pivotisierung die Kondition?
+
+	      \vspace{1.25cm}
+
+	\item Wie schafft der Numeriker einen Spaltentausch im Gauß-Algorithmus durchzuführen, ohne eine Dummy-Variable zu verwenden? \kommentarMacro{kein Originaltext}
+
+	      \vspace{1.25cm}
+
+	\item Weisen Sie nach, dass Matrizen vom Typ $A = \begin{bmatrix} \alpha & \beta \\ -\beta & \alpha \end{bmatrix}$ die  Möglichkeit bieten, konjugierte Eigenwerte in reeller Form darzustellen.
+
+\end{enumerate}
+\pagebreak
+
+\newcommand{\raphsonFunction}{
+	$f(x_1,x_2) =
+		\begin{bmatrix}
+			x_1^2 - x_2 \\ x_1x_2^2 + x_2
+		\end{bmatrix}$}
+
+\newcommand{\raphsonStartVal}{
+	$\begin{bmatrix}x_{10} \\ x_{20}\end{bmatrix}
+		=
+		\begin{bmatrix}1\\ -1\end{bmatrix}$}
+
+\section*{Aufgabe 5: (9 Punkte)}
+\begin{enumerate}
+	\item Leiten Sie das Newton-Verfahren zur Lösung von Optimierungsaufgaben her und geben Sie die recheneffiziente Version an.
+
+	      \vspace{4cm}
+
+	\item Erklären Sie das Prinzip der Aktiven Mengenstrategie in der Optimierung.
+
+	      \vspace{2cm}
+
+	\item Definieren Sie superlineare Konvergenz.
+
+	      \vspace{2cm}
+
+	\item Warum kann der Gradient einer $p$-dimensionalen Funktion in $p+1$ Funktionsaufrufen berechnet werden?
+
+	      \vspace{1.5cm}
+
+	\item Wie viele zweite Ableitungen benötigen Sie beim Newton-Verfahren bei einem $p$-parametrischen Problem?
+
+	      \vspace{1.5cm}
+
+	\item Berechnen Sie den ersten Schritt der Newton-Raphson-Iteration zur Nullstellensuche von \raphsonFunction, wenn Sie mit \raphsonStartVal\, starten.
+
+\end{enumerate}
+\pagebreak
+
+\section*{Aufgabe 6: (9 Punkte)}
+\begin{enumerate}
+	\item Formen Sie die Differenzialgleichung $y''' + x^2y = 1$ so um, dass Sie sie mit dem Runge-Kutta-Verfahren integrieren könnten.
+
+	      \vspace{2.5cm}
+
+	\item Notieren Sie die Funktionsdefinition für das Lösen eines p-dimensionalen Differentialgleichungssystems erster Ordnung mit variabler Schrittweite.
+
+	      \vspace{2.5cm}
+
+	\item Berechnen Sie den Wert $y(\frac{5}{2})$ der Differentialgleichung $y' = xy + x$ mit dem Runge-Kutta-4-Verfahren, wenn Ihr Anfangswert $y(2) = 0$ ist. Wählen Sie die Schrittweite $h = \frac{1}{2}$.
+
+	      \vspace{7cm}
+
+	\item Bestimmen Sie ein $\epsilon$, bis zu dem Sie sich $x=1$ nähern können, ohne dass die Kondition von $f(x) = \frac{1}{(x-1)^2}$ den Wert $\kappa = 10^6$ übersteigt.
+
+\end{enumerate}
+\pagebreak
+
+\end{document}

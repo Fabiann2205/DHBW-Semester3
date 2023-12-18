@@ -1,0 +1,416 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usetikzlibrary{arrows,automata,positioning}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\captionsetup[table]{name=Tabelle}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=35mm,
+ bottom=25mm,
+ right=25mm
+}
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\padTable}[1]{$\quad$ #1 $\quad$}
+\newcommand{\ankerAuf}{⊣} % nur mit XeLaTeX, da Unicode!
+\newcommand{\ankerZu}{⊢}
+\pagestyle{fancy}
+%\DeclareUnicodeCharacter{}{\ankerZu}
+\fancyhf{}
+\rhead{Klausur Sose 2021}
+\lhead{Mathematik \rom{4} $-$ Numerik }
+\cfoot{Seite \thepage}
+\lfoot{}
+
+
+\usepackage{xcolor}
+\usepackage{environ}
+\usepackage[most]{tcolorbox}
+\tcbset{on line,
+        boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white,colback=lightgray,  
+        highlight math style={enhanced}
+        }
+\newcommand{\solutionMacro}[1]{\,\\\texttt{#1}\,\\}
+\NewEnviron{solution}{\textcolor{blue}{\solutionMacro{\BODY}}}
+
+\renewcommand{\footrulewidth}{1pt}
+\title{Mathematik \rom{4} \\ Numerik \\ Lutz Gröll $-$ Klausur  SoSe 2021}
+\author{TINF19B2 $-$ Viel größere Fans des Gröll!}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+	\large
+	\vspace*{8cm}
+ 	Maximale Punktzahl: 59 Punkte\\
+	\vspace*{1cm}
+	Bearbeitungszeit: 90 Minuten\\
+	\vspace*{1cm}
+	Hilfsmittel: Taschenrechner + Formelblatt (für LA und Analysis, siehe Ordner)\\
+	\vspace*{1cm}
+	Datum: 09.06.2021\\
+	\vspace*{1cm}
+	\small In korrektem Wortlaut rekonstruiert - Satzzeichen teilweise korrigiert.\\Format der folgenden Seiten ist dem der Klausur sehr ähnlich.\\
+\end{center}
+\pagebreak
+
+
+
+\section*{Aufgabe 1: (9 Punkte)}
+
+\begin{enumerate}
+	\item Notieren Sie die wichtigsten Schritte für das Erstellen eines numerischen Programms.
+	
+	\begin{solution}
+	\begin{enumerate}[label=$(\roman*)$]
+		\item Geeigneten Algorithmus wählen
+		\item Ein- und Ausgabevariablen festlegen (und Datentypen etc.)
+		\item Kommentare schreiben (Funktion des Programms, \\Spezifikation der Schnittstelle und Quelle)
+		\item Interne Variablen festlegen
+		\item Eigentliches Programm schreiben
+		\item Testen
+		\item Optional: Optimieren
+		\item Numerische Bugs suchen und beseitigen (Singuläre Matrix?,\\ Nahezu singulär? Negativer Radikant? etc.)
+		\item Außerdem: Echtzeitanforderungen? Sicherheitsaspekte beachtet?
+	\end{enumerate}
+	\end{solution}
+	\vspace{2cm}
+	
+	\item Nennen Sie 4 Verfahren zur numerischen Lösung eines Problems und stellen Sie das zugehörige analytische Problem (Beispiel) gegenüber.
+
+	\begin{solution}
+	\begin{tabular}{l|l}
+		Numerisches Verfahren: & Analytisches Problem:\\
+		Runge-Kutta-4-Verfahren & Lösen von DGLs \\
+		Trapezregel	& Berechnung eines bestimmten Integrals \\
+		Newton-Raphson-Verfahren & Nullstellensuche \\
+		Newton-Verfahren & Nichtlineare Optimierung
+	\end{tabular}
+	\end{solution}
+\end{enumerate}
+
+\pagebreak
+\newcommand{\zeilensummennorm}[1]{||#1||_{\infty}}
+\section*{Aufgabe 2: (11 Punkte)}
+\begin{enumerate}
+	\item Welchen Wert hat die Konditionszahl von $A=\begin{bmatrix}
+	1 & 0 \\ 3 & 4
+	 \end{bmatrix}$ in der Zeilensummennorm?
+	 \begin{solution}
+	$\kappa_{\infty}(A) = \zeilensummennorm{A}\cdot\zeilensummennorm{A^{-1}} = 7 \cdot \frac{1}{4} \cdot 4$
+	\end{solution}
+	
+	\item Formulieren Sie die Berechnung von $x = B^{-1}Cd$ in eine numerisch effiziente Form um.
+	\begin{solution}
+		$Bx = Cd\qquad $
+	\end{solution}
+	
+	\item Zeigen Sie an einem Beispiel, dass die Addition numerisch nicht assoziativ ist.
+	
+\newcommand{\numPlus}{\,\widetilde{+}\,}
+	\begin{solution}
+		$(10^{-20} \numPlus 1) \numPlus (-1) \neq 10^{-20} \numPlus (1 \numPlus (-1))$
+	\end{solution}
+	
+	\item Nennen Sie die 3 Bedingungen für ein well-posed Problem.
+	
+	\begin{solution}
+	Existenz einer Lösung, Eindeutigkeit der Lösung und stetige Abhängigkeit von den Eingangsdaten (Hadamard-Bedingungen).
+	\end{solution}
+	
+	\item Notieren Sie ein Least-Squares-Problem mit Tikhonov Regularisierung.\\
+		\begin{solution}
+			$||Ax - b||_2^2 + \mu \cdot ||x||_2^2 \rightarrow Min$\\
+			LS-Lösung (ineffizient): $x = (A^TA + \mu\cdot I_n)^{-1} A^Tb$
+		\end{solution}
+
+	
+	\item Warum kann es beim Lösen der Differentialgleichung $\dot{x_1} = x_2 - k \sqrt{x_1}$ mit \mbox{$x\geq 0$} sinnvoll sein, eine Modifikation des Vektorfelds vorzunehmen? Welche Lösung schlagen Sie vor?
+	\begin{solution}
+		Nicht sicher, ob das die korrekte Lösung ist, aber es kann durch numerische Fehler passieren, dass plötzlich $x_1 < 0$, sodass der Radikant negativ wird.\\
+		Meine Lösung: $\dot{x_1} = x_2 - k\sqrt{max\{x_1, 0\}}$
+	\end{solution}
+
+	
+	\item Ein Algorithmus hat die Komplexität $\mathcal{O}(n^2)$. Heißt das, a) dass er weniger Aufwand als $n^2$ Operationen benötigt, b) mindestens $n^2$ Operationen benötigt, c) genau $kn^2$ mit $k\in \mathbb{N}$ Operationen benötigt oder ist d) keine der Aussagen richtig?
+	\begin{solution}
+		d) ist korrekt.	
+	\end{solution}
+
+	\pagebreak
+
+\pagebreak
+	\item Wodurch sind Testmatrizen für numerische Leistungstests gekennzeichnet?
+\vspace{-0.5cm}	
+	\begin{solution}
+		\begin{enumerate}[label=$(\roman*)$]
+			\item In der Ordnung skalierbar (zum Beispiel zum Testen des Speicherverbrauchs)
+			\item Lösung bekannt
+			\item Testen numerische Grenzfälle aus (Singularitäten, nahezu singulär etc.)
+			\item In der Kondition veränderlich
+			\item Stehen in Büchern!
+		\end{enumerate}			
+	\end{solution}
+
+
+
+\end{enumerate}
+
+\pagebreak
+
+\section*{Aufgabe 3: (9 Punkte)}
+
+\begin{enumerate}
+
+	\item Nennen Sie eine praktische Anwendung, für die eine Interpolation nach Lagrange in Frage kommt.
+	\begin{solution}
+		Bei Hashtabellen zum Berechnen eines Zwischenwertes (falls die\\ eigentliche Funktion zu aufwendig ist oder eine Approximation reicht).
+	\end{solution}
+
+	
+	
+	\item Notieren Sie für $y = \frac{ax + b}{x^2 + cx + d}$ einen linearen LS-Ansatz.
+	\begin{solution}
+	Ausmultiplizieren gibt $yx^2 + cyx + yd - ax - b = 0$. Daraus dann den LS-Ansatz:\\
+	
+	$Ax = 0_n,\qquad A = \begin{bmatrix}
+		y_1x_1^2 & y_1x_1 & y_1 & -x_1 & -1\\
+		\vdots & \vdots & \vdots & \vdots & \vdots\\
+		y_nx_n^2 & y_nx_n & y_n & -x_n & -1
+	\end{bmatrix}, \qquad x = \begin{bmatrix}
+		1\\c\\d\\a\\b
+	\end{bmatrix}$.
+	\end{solution}
+	
+	\item Wie viele Stützwerte benötigen Sie mindestens, um die Parameter aus Teilaufgabe 2 eindeutig bestimmen zu können?
+	\begin{solution}
+		4 Stützwerte
+	\end{solution}
+
+	
+	
+	\item Wie viele Funktionsaufrufe benötigen Sie mindestens für die numerische Approximation einer dritten Ableitung?
+	\begin{solution}
+		Für die $n=3$ Ableitung benötigt man $n+1$ Stützwerte.\\Hier also 4 Funktionsaufrufe.
+	\end{solution}
+
+	
+	\item In welchem Konflikt stehen Ingenieure, die online eine Ableitung berechnen müssen?
+	\begin{solution}
+		Sie kennen die zukünftigen Werte nicht und können um den neusten Wert deshalb niemals symmetrisch differenzieren.	
+	\end{solution}
+
+	
+	\item Was halten Sie von $f_k'' = -\frac{1}{12}f_{k-3}+ \frac{1}{3}f_{k-2} + \frac{1}{2}f_{k-1} - \frac{5}{3}f_k + f_{k+1}$?
+	\begin{solution}
+		Gar nichts. Die Summe der Gewichte müssen beim Ableiten 0 sein (wegen $f(x) = c, c\in \mathbb{R}$. Außerdem muss man noch durch $h^2$ für die zweite Ableitung teilen.	
+	\end{solution}
+
+\pagebreak
+
+	\item Kann für $x^3(x-1) = 1$ der exakte Wert für $x\approx -0.8$ durch die Fixpunktiteration $x_{k+1} = \sqrt[3]{\frac{1}{x_k - 1}}$ berechnet werden? Führen Sie hierzu eine Konvergenzbetrachtung durch.\\
+	\begin{solution}
+		$\Phi(x_k) = \sqrt[3]{\frac{1}{x_k-1}},\quad \Phi'(x_k) = -\frac{1}{3}\cdot (x_k - 1)^{-\frac{4}{3}}$ Tatsächlich $||\Phi'(-0.8)|| < 1$.\\
+		Deshalb ja, denn der Fixpunkt ist attraktiv.
+	\end{solution}
+
+	
+	\item Warum werden Eigenwerte von Matrizen numerisch nicht wie in der Algebra üblich über die charakteristische Gleichug bestimmt? Was macht man stattdessen?\\
+	\begin{solution}
+	Da Polynome numerisch unvorteilhaft sind (Überläufe, aufwendige\\Berechnung und aufwendige Nullstellensuche). Bei $100\times 100$ Matrix ein\\Polynom 100. Grades. Stattdessen reelle QZ-Zerlegung \\(durch Gram-Schmidt-Orthogonalisierung).
+	\end{solution}
+
+\end{enumerate}
+
+
+
+
+\pagebreak
+
+\newcommand{\realVector}[2]{#1\in \mathbb{R}^{#2}}
+\newcommand{\realMatrix}[3]{#1\in \mathbb{R}^{#2\times #3}}
+\newcommand{\indentTab}{\hphantom{~~~~}}
+
+\section*{Aufgabe 4: (9 Punkte)}
+
+\begin{enumerate}
+
+	\item Gegeben seien $\realMatrix{A}{30}{10}, \realMatrix{B}{10}{100}, \realVector{C}{100}$. Berechnen Sie die Flops für $A(BC)$.
+	\begin{solution}
+		$D = BC, \realVector{D}{10},\qquad Flop(A(BC)) = \underbrace{Flop(AD)}_{30\cdot 1\cdot (2\cdot 10 - 1) = 570} + \underbrace{Flop(BC)}_{10\cdot 1\cdot (2\cdot 100 - 1) = 1990} = 2560$
+	\end{solution}
+	
+	\item Mit welchem Algorithmus können Sie die Funktionsaufrufe für eine rationale Funktion reduzieren?
+	\begin{solution}
+		Über Kettenbrüche (konnte sich niemand mehr aktiv dran erinnern).
+	\end{solution}
+	
+	\item Welche Vorraussetzung muss für eine Parallelisierung eines Programms vorliegen? Nennen Sie ein Beispiel, wo Prallelisierung auf 8 Rechnerkernen leicht anwendbar ist und viel bringt.
+	\begin{solution}
+	Unabhängige Teilaufgaben. Beispiel: Matrixmultiplikation mit Matrizen $\realMatrix{A}{8}{8}, \realMatrix{B}{8}{8}, A\cdot B = C$
+	\end{solution}
+	
+	\item Schreiben Sie in Pseudocode einen Test, um numerische Bugs bei der Auswertung von $tan\,x$ zu verhindern.
+	\begin{solution}
+		double ownTangent(double x)\\
+			\indentTab x' := (x mod $\pi$) - $\frac{\pi}{2}$\\
+			\indentTab if ($abs(x') \leq eps$) throw error;\\
+			\indentTab else return tan(x);\\
+	\end{solution}
+	
+	\item Was verstehen Sie unter Pivotisierung?\\
+	Erklären Sie, worin der Nutzen dieser Technik liegt.
+
+	\begin{solution}
+		Das Auswählen eines Elementes nach einer definierten Strategie.\\
+		Beim Gauß-Algorithmus sucht man das betragsmäßig größte Element der\\ Spalte/Zeile oder Matrix und nimmt dieses als Pivotelement. Numerisch ist dies überlegen, da numerische Fehler minimiert werden.
+	\end{solution}	
+	
+	\item Weisen Sie nach, dass Matrizen vom Typ $A = \begin{bmatrix} \alpha & \beta \\ -\beta & \alpha \end{bmatrix}$ die  Möglichkeit bieten, konjugierte Eigenwerte in reeller Form darzustellen.
+	
+	\begin{solution}
+		Charakteristisches Polynom: $det(A-\lambda I_n) = (\alpha - \lambda)^2 +\beta^2 \stackrel{!}{=} 0$.\\
+		Offensichtlich gilt damit $\alpha-\lambda = \pm i\cdot \beta \iff \lambda_{1/2} = \alpha \pm i\cdot \beta$.
+		QED.		
+	\end{solution}
+	
+\pagebreak
+
+	\item Bestimmen Sie ein $\epsilon$, bis zu dem Sie sich $x=1$ nähern können, ohne dass die Kondition von $f(x) = \frac{1}{(x-1)^2}$ den Wert $\kappa = 10^6$ übersteigt.
+	
+	\begin{solution}
+	
+	$\kappa_{rel} = 10^6 < | f'(x) \cdot \frac{x}{f(x)} |,\quad f'(x) = -2\cdot (x-1)^{-3}$\\
+	$\implies 10^6 < 2\cdot |(x-1)^{-3} \cdot (x-1)^2 \cdot x| = 2\cdot 
+	|\frac{x}{x-1}| |_{x=1\pm \epsilon}$\\
+	$\implies 10^6 < 2\cdot|\frac{1\pm \epsilon}{1\pm \epsilon - 1}| \approx \frac{2}{\epsilon}$.
+	
+	Also $\epsilon < 2 \cdot 10^{-6}$.
+	\end{solution}
+\end{enumerate}
+
+\pagebreak
+
+\newcommand{\raphsonFunction}{
+	$f(x_1,x_2) = 
+		\begin{bmatrix}
+			x_1^2 + x_2\\ x_1x_2 + x_2^2
+		\end{bmatrix}$}
+
+\newcommand{\raphsonStartVal}{
+	$\begin{bmatrix}x_{10} \\ x_{20}\end{bmatrix}
+	= 
+	\begin{bmatrix}1\\ -1\end{bmatrix}$}
+
+\section*{Aufgabe 5: (9 Punkte)}
+\begin{enumerate}
+
+	\item Leiten Sie das Newton-Verfahren zur Lösung von Optimierungsaufgaben her und geben Sie die recheneffiziente Version an.
+	\begin{solution}
+		$g_k$ := Gradient an Stelle $x_k$, $H_k$ := Hesse-Matrix an Stelle $x_k$.\\
+		$Q(x) = Q(x_k) + g_k^T\cdot (x-x_k) + \frac{1}{2} (x-x_k)\cdot H_k \cdot (x-x_k) + Rest$\\\\
+		Quadratisches Ersatzproblem:\\
+		$Q(x) = Q(x_k) + g_k^T\cdot (x-x_k) + \frac{1}{2} (x-x_k)\cdot H_k \cdot (x-x_k)$\\
+		$\frac{\delta Q}{\delta x} \stackrel{!}{=} 0 \iff g_k + H_k\cdot (x-x_k)|_{x=x_{opt}} = 0 \implies x_{k+1} := x_{opt} = x_k - H_k^{-1}\cdot g_k$\\\\
+		Effiziente Variante:\\
+		$x_{k+1} = x_k - \Delta x_k, \qquad H_k\cdot \Delta x_k = g_k$.
+	\end{solution}
+	
+	
+	\item Erklären Sie das Prinzip der Aktiven Mengenstrategie in der Optimierung.
+	\begin{solution}
+		``Entlanghangeln`` an aktiven Constraints (Ungleichungen, die mit $=$\\ erfüllt werden) bis zum Minimierer oder z. B. bis der Gradient beim\\ Gradientenabstiegsverfahren in einer andere Richtung zeigt.
+	\end{solution}
+	
+	\item Definieren Sie superlineare Konvergenz.
+	\begin{solution}
+		$||x_{k+1} - x^{*}|| \leq c_k \cdot ||x_k - x*||^p, \quad c_k \rightarrow 0$ für $k \rightarrow \infty$\\
+		Kontraktionskonstante $c_k$ geht mit steigender Iteration gegen 0.
+	\end{solution}
+	
+	\item Warum ist das Newton-Verfahren zur Lösung von Aufgaben $c^T x \rightarrow Min$ unter $Ax = b$ und $Cx \leq d$ nicht geeignet?
+	
+	\begin{solution}
+		Weil $c^T x$ linear ist und somit die Hesse-Matrix der Nullmatrix entspricht und somit nicht invertierbar ist.
+	\end{solution}
+
+	\item Wie viele zweite Ableitungen benötigen Sie beim Newton-Verfahren bei einem $p$-parametrischen Problem?
+	
+	\begin{solution}
+		$\frac{p\cdot(p+1)}{2}$ Ableitungen, solange Satz von Schwartz erfüllt ist (also gdw. stetige differenzierbar bzw. wie Gröll es schreiben würde $f\in \mathcal{C}^2$ (zweimal stetig differenzierbar).
+	\end{solution}	
+	
+\pagebreak
+	\item Berechnen Sie den ersten Schritt der Newton-Raphson-Iteration zur Nullstellensuche von \raphsonFunction, wenn Sie mit \raphsonStartVal\, starten.
+	\begin{solution}
+		$f(\begin{bmatrix}x_{10} \\ x_{20}\end{bmatrix}) = \begin{bmatrix}0 \\ 0\end{bmatrix}$.\\
+		Also effektiv ist der Startwert bereits die Lösung.\\
+		Beachte: Die Jacobi-Matrix ist singulär und damit nicht invertierbar. Du könntest also hier keine ohnehin keine Iteration durchrechnen.\\
+		Gröll meinte nach der Klausur, das sei ihm gar nicht aufgefallen,\\da er immer nur an ein paar Zahlen aus Altklausuren rumdreht.
+	\end{solution}	
+	
+
+\end{enumerate}
+
+\pagebreak
+\section*{Aufgabe 6: (12 Punkte)}
+
+\begin{enumerate}
+	\item Formen Sie die Differenzialgleichung $y''' + x^2y = 1$ so um, dass Sie sie mit dem Runge-Kutta-Verfahren integrieren könnten.
+	\begin{solution}
+	Substitutionen: $y_1 = y,\quad y_2 = y',\quad y_3 = y''$.\\\\
+	DGL-System:
+	\begin{enumerate}
+		\item $y_1' = y_2$
+		\item $y_2' = y_3$
+		\item $y_3' = -x^2y_1 + 1$
+	\end{enumerate}
+	
+	Anfangswerte nicht vergessen! (Fände Gröll gar nicht lustig!)\\
+	$y_1(x_{10}) = y_0,\quad y_2(x_{20}) = y_0', \quad y_3(x_{30}) = y_0''$
+	\end{solution}
+	\item Notieren Sie für ein Cauchy-Problem eine Funktionsdefinition für das Lösen eines $p$-dimensionalen Differentialgleichungssystems erster Ordnung.
+
+	\begin{solution}
+		[double[p, N], time[1,N]] ode(handle f, double[p] initvalues, double xstart,\\
+		\indentTab \indentTab double xfinal, optional tol, optional verfahren)
+	\end{solution}	
+	
+	
+	\item Berechnen Sie den Wert $y(\frac{3}{2})$ der Differentialgleichung $y' = xy + x$ mit dem Runge-Kutta-4-Verfahren, wenn Ihr Anfangswert $y(1) = 2$ ist. Wählen Sie die Schrittweite $h = \frac{1}{2}$.
+	\begin{solution}
+	$y_1 = y_0 + \frac{h}{6} \cdot ( k_1 + 2k_2 + 2k_3 + k_4 )$\\
+	\begin{enumerate}[label=$\,$]
+		\item $k_1 = f(x_0, y_0)$
+		\item $k_2 = f(x_0 + \frac{h}{2}, y_0 + \frac{h}{2}k_1)$
+		\item $k_3 = f(x_0 + \frac{h}{2}, y_0 + \frac{h}{2}k_2)$
+		\item $k_4 = f(x_0 + h, y_0 + h\cdot k_3)$
+	\end{enumerate}
+	Das ist mir zu blöd. Rechnet das doch selbst.
+	\end{solution}
+
+	
+	\item Lösen Sie $Q = \int\limits_0^1 (x-1)^3 dx$ analytisch. Anschließend lösen Sie das Problem mit der Trapezregel numerisch. Verwenden Sie die Schrittweite $h = \frac{1}{4}$.
+	\begin{solution}
+	$f(x) = (x-1)^3$\\
+	Analytisch $[\frac{1}{4}(x-1)^4]_0^1 = -\frac{1}{4}$.\\
+	Trapez: $h \cdot (\frac{1}{2} f(0) + f(\frac{1}{4}) +f(\frac{1}{2})+f(\frac{3}{4})+\frac{1}{2} f(1)) \approx -0.26$ (glaub ich; Erneut: Mach selbst!)
+	\end{solution}
+\end{enumerate}
+
+
+\end{document}
