@@ -133,3 +133,4 @@ Multiplizierer aus Paralleladdierern (seriell, parallel)
   Skizzieren Sie im Folgenden Diagramm Cachebelegungen nachdem diese Zugriffe stattgefunden haben und machen Sie
   deutlich, wo konkret die zugehörigen Worte mit diesen Hauptspeicheradressen im Cache liegen!
 
+<img src="bilder/cacheSim.jpeg" alt="Cache Sim">
